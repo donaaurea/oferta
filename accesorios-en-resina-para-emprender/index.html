@@ -2,6 +2,17 @@
 <html lang="es-MX">
 
 <head>
+    <script>
+        if (window.trustedTypes && window.trustedTypes.createPolicy) {
+            if (!window.trustedTypes.defaultPolicy) {
+                window.trustedTypes.createPolicy('default', {
+                    createHTML: (string) => string,
+                    createScriptURL: (string) => string,
+                    createScript: (string) => string
+                });
+            }
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#8348D9">
@@ -1866,7 +1877,14 @@
             <!-- VSL — Plyr container -->
             <div class="vsl-wrap">
                 <span class="vsl-badge">▶ Mira antes de irte</span>
-                <div id="vsl-player"></div>
+                <div class="plyr__video-embed" id="vsl-player">
+                    <iframe
+                        src="https://www.youtube.com/embed/m38Gi60iBeM?origin=https://off.vagalimitada.com&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                        allowfullscreen
+                        allowtransparency
+                        allow="autoplay"
+                    ></iframe>
+                </div>
             </div>
 
             <div class="hero-cta">
@@ -2507,7 +2525,7 @@
     <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
     <script>
         /* ============================================
-           VSL — Plyr with YouTube (custom poster)
+           VSL — Plyr with YouTube
            ============================================ */
         document.addEventListener('DOMContentLoaded', function () {
             try {
@@ -2517,22 +2535,10 @@
                     ratio: '16:9',
                     autoplay: false,
                     muted: false,
-                    hideControls: false,
-                    loadSprite: true
+                    hideControls: false
                 });
-
-                player.source = {
-                    type: 'video',
-                    title: 'Curso de Resina',
-                    sources: [{ src: 'm38Gi60iBeM', provider: 'youtube' }],
-                    poster: 'https://img.youtube.com/vi/m38Gi60iBeM/maxresdefault.jpg'
-                };
             } catch (e) {
-                // fallback: simple iframe
-                const wrap = document.getElementById('vsl-player');
-                if (wrap) {
-                    wrap.innerHTML = '<iframe src="https://www.youtube.com/embed/m38Gi60iBeM?rel=0&modestbranding=1" style="width:100%;height:100%;border:0" allowfullscreen></iframe>';
-                }
+                console.error("Error initializing Plyr:", e);
             }
         });
 
