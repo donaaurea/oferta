@@ -1,0 +1,2752 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#8348D9">
+    <meta name="description"
+        content="Aprende a crear accesorios en resina y emprende tu propio negocio en 30 días. Curso 100% online.">
+    <title>Accesorios de RESINA para Emprender · Curso Completo</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Accesorios de RESINA para Emprender">
+    <meta property="og:description" content="Aprende a crear accesorios en resina y emprende en 30 días.">
+    <meta property="og:image" content="assets/PORTADA-RESINA.jpg">
+    <meta property="og:locale" content="es_MX">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.plyr.io" crossorigin>
+    <link rel="preconnect" href="https://www.youtube.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
+    <style>
+        :root {
+            --purple: #8348D9;
+            --purple-deep: #6F3DC2;
+            --purple-dark: #4A2880;
+            --pink: #D66D94;
+            --orange: #DB793C;
+            --orange-soft: #F4B98E;
+            --cream: #FFF8F2;
+            --ivory: #FBF6F0;
+            --ink: #2A1A3D;
+            --ink-soft: #5C4E70;
+            --line: rgba(131, 72, 217, .14);
+            --green: #1A9E5A;
+            --red: #D9263A;
+            --shadow-soft: 0 10px 40px -10px rgba(74, 40, 128, .18);
+            --shadow-pop: 0 20px 60px -15px rgba(131, 72, 217, .35);
+            --grad-main: linear-gradient(135deg, #8348D9 0%, #A35AC9 35%, #D66D94 70%, #DB793C 100%);
+            --grad-purple-pink: linear-gradient(135deg, #8348D9 0%, #D66D94 100%);
+            --r-s: 10px;
+            --r-m: 18px;
+            --r-l: 28px;
+            --r-xl: 42px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            font-size: 16px;
+            line-height: 1.55;
+            color: var(--ink);
+            background: var(--ivory);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none
+        }
+
+        /* ============ TOP BAR — single, focused message ============ */
+        .bar {
+            background: var(--ink);
+            color: #fff;
+            padding: 12px 16px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            position: relative;
+            overflow: hidden;
+            transition: background .4s ease;
+        }
+
+        .bar::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .08), transparent);
+            animation: slide 4s linear infinite;
+        }
+
+        @keyframes slide {
+            from {
+                transform: translateX(-100%)
+            }
+
+            to {
+                transform: translateX(100%)
+            }
+        }
+
+        .bar.urgent {
+            background: linear-gradient(90deg, #7A1419, #D9263A)
+        }
+
+        .bar.recovered {
+            background: linear-gradient(90deg, #1A6E3D, #1A9E5A)
+        }
+
+        .bar-icon {
+            font-size: 14px;
+            line-height: 1
+        }
+
+        .bar-time {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            background: rgba(255, 255, 255, .15);
+            padding: 3px 10px;
+            border-radius: 99px;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: .5px;
+            min-width: 80px;
+            display: inline-block;
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            position: relative;
+            padding: 32px 20px 48px;
+            background:
+                radial-gradient(circle at 10% 0%, rgba(131, 72, 217, .12) 0%, transparent 50%),
+                radial-gradient(circle at 90% 100%, rgba(214, 109, 148, .12) 0%, transparent 50%),
+                var(--ivory);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--grad-purple-pink);
+            filter: blur(120px);
+            opacity: .22;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center
+        }
+
+        .hero-logo {
+            width: 180px;
+            margin: 0 auto 20px
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            border: 1px solid var(--line);
+            padding: 7px 14px;
+            border-radius: 99px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--purple);
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 16px;
+        }
+
+        .hero-tag-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--orange);
+            box-shadow: 0 0 0 4px rgba(219, 121, 60, .2);
+        }
+
+        .hero h1 {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: clamp(28px, 7vw, 52px);
+            line-height: 1.05;
+            letter-spacing: -.02em;
+            margin-bottom: 14px;
+            text-align: left;
+        }
+
+        @media(min-width:680px) {
+            .hero h1 {
+                text-align: center
+            }
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            font-weight: 500;
+            background: var(--grad-purple-pink);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero h1 b {
+            font-weight: 700;
+            color: var(--orange)
+        }
+
+        .hero-sub {
+            font-size: clamp(15px, 3.8vw, 17px);
+            color: var(--ink-soft);
+            max-width: 580px;
+            margin: 0 0 28px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        @media(min-width:680px) {
+            .hero-sub {
+                margin: 0 auto 28px;
+                text-align: center
+            }
+        }
+
+        /* ============ VSL — Plyr container ============ */
+        .vsl-wrap {
+            position: relative;
+            max-width: 760px;
+            margin: 0 auto 28px;
+            border-radius: var(--r-l);
+            overflow: hidden;
+            box-shadow: var(--shadow-pop);
+            border: 3px solid #fff;
+            background: #000 url('https://img.youtube.com/vi/m38Gi60iBeM/maxresdefault.jpg') center/cover no-repeat;
+            aspect-ratio: 16/9;
+        }
+
+        .vsl-wrap::before {
+            content: "";
+            position: absolute;
+            inset: -3px;
+            border-radius: var(--r-l);
+            background: var(--grad-main);
+            z-index: -1;
+            opacity: .5;
+            filter: blur(20px);
+        }
+
+        #vsl-player {
+            width: 100%;
+            height: 100%;
+            border-radius: calc(var(--r-l) - 3px);
+            overflow: hidden
+        }
+
+        .vsl-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(0, 0, 0, .72);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 5px 11px;
+            border-radius: 99px;
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            pointer-events: none;
+        }
+
+        .vsl-badge::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            background: #FF4D4D;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+
+            50% {
+                opacity: .5;
+                transform: scale(1.3)
+            }
+        }
+
+        .plyr {
+            --plyr-color-main: #8348D9;
+            --plyr-video-control-color: #fff;
+            --plyr-video-control-color-hover: #fff;
+            --plyr-video-control-background-hover: #8348D9;
+            --plyr-range-fill-background: #8348D9;
+            --plyr-control-radius: 99px;
+            --plyr-font-family: 'Plus Jakarta Sans', sans-serif;
+            height: 100%;
+            border-radius: calc(var(--r-l) - 3px);
+        }
+
+        .plyr--video {
+            height: 100%
+        }
+
+        .plyr__poster {
+            background-color: #000;
+            background-size: cover
+        }
+
+        .plyr__control--overlaid {
+            background: var(--grad-purple-pink);
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(131, 72, 217, .5);
+        }
+
+        .plyr__control--overlaid svg {
+            width: 22px;
+            height: 22px
+        }
+
+        /* ============ HERO CTA ============ */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--grad-purple-pink);
+            color: #fff;
+            font-weight: 700;
+            font-size: 15.5px;
+            padding: 18px 26px;
+            border-radius: 99px;
+            letter-spacing: .2px;
+            text-align: center;
+            width: 100%;
+            max-width: 440px;
+            box-shadow: 0 14px 30px -8px rgba(131, 72, 217, .55);
+            transition: transform .25s ease, box-shadow .25s ease;
+            position: relative;
+            overflow: hidden;
+            line-height: 1.2;
+        }
+
+        .btn-primary::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .3), transparent);
+            transform: translateX(-100%);
+            transition: transform .6s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 40px -10px rgba(131, 72, 217, .7)
+        }
+
+        .btn-primary:hover::before {
+            transform: translateX(100%)
+        }
+
+        .btn-primary svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px
+        }
+
+        .btn-meta {
+            font-size: 12px;
+            color: var(--ink-soft);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px
+        }
+
+        .btn-meta svg {
+            width: 13px;
+            height: 13px;
+            color: var(--green)
+        }
+
+        /* ============ SECTIONS ============ */
+        section {
+            padding: 56px 20px;
+            position: relative
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 32px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 24px;
+            height: 1px;
+            background: var(--orange);
+        }
+
+        .h2 {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: clamp(26px, 5.5vw, 40px);
+            line-height: 1.1;
+            letter-spacing: -.02em;
+            color: var(--ink);
+            margin-bottom: 14px;
+        }
+
+        .h2 em {
+            font-style: italic;
+            color: var(--purple)
+        }
+
+        .lead {
+            font-size: clamp(14.5px, 3.5vw, 16px);
+            color: var(--ink-soft);
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        /* ============ BRAND STRIP ============ */
+        .strip {
+            background: linear-gradient(135deg, #8348D9 0%, #D66D94 100%);
+            padding: 22px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .strip-track {
+            display: flex;
+            gap: 48px;
+            animation: scroll 25s linear infinite;
+            white-space: nowrap;
+            width: max-content;
+        }
+
+        .strip-item {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 21px;
+            color: rgba(255, 255, 255, .9);
+            display: inline-flex;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .strip-item::after {
+            content: "✦";
+            color: var(--orange-soft);
+            font-style: normal
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        /* ============ PAIN POINTS ============ */
+        .pain {
+            background: linear-gradient(180deg, var(--ivory) 0%, #FFF1E8 100%)
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .pain-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: #fff;
+            border: 1px solid var(--line);
+            padding: 16px 18px;
+            border-radius: var(--r-m);
+            box-shadow: 0 4px 12px -6px rgba(74, 40, 128, .08);
+            transition: transform .25s ease;
+        }
+
+        .pain-item:hover {
+            transform: translateX(4px)
+        }
+
+        .pain-icon {
+            flex-shrink: 0;
+            width: 38px;
+            height: 38px;
+            border-radius: 11px;
+            background: linear-gradient(135deg, #FFE5D6, #FFD2B5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pain-icon svg {
+            width: 18px;
+            height: 18px;
+            color: var(--orange)
+        }
+
+        .pain-text {
+            font-size: 14.5px;
+            line-height: 1.4
+        }
+
+        .pain-text b {
+            color: var(--purple);
+            font-weight: 700
+        }
+
+        /* ============ GAINS ============ */
+        .gains {
+            background: #fff
+        }
+
+        .gains-flex {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            align-items: center;
+            margin-top: 28px;
+        }
+
+        .gains-img {
+            border-radius: var(--r-l);
+            overflow: hidden;
+            box-shadow: var(--shadow-pop);
+            position: relative;
+            aspect-ratio: 4/3;
+        }
+
+        .gains-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .gains-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
+
+        .gain-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .gain-row:last-child {
+            border: none
+        }
+
+        .gain-num {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--grad-purple-pink);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 13px;
+            font-family: 'Fraunces', serif;
+        }
+
+        .gain-row p {
+            font-size: 14.5px;
+            line-height: 1.45
+        }
+
+        .gain-row b {
+            color: var(--ink);
+            font-weight: 700
+        }
+
+        /* ============ MODULES (CONTENT) ============ */
+        .content {
+            background: linear-gradient(180deg, #FBF6F0 0%, #F5E8DC 100%)
+        }
+
+        .modules {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin-top: 28px
+        }
+
+        .module {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--r-m);
+            overflow: hidden;
+        }
+
+        .module[open] {
+            box-shadow: var(--shadow-soft)
+        }
+
+        .module summary {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 18px;
+            cursor: pointer;
+            list-style: none;
+            font-weight: 600;
+            font-size: 14.5px;
+            line-height: 1.3;
+        }
+
+        .module summary::-webkit-details-marker {
+            display: none
+        }
+
+        .module-num {
+            flex-shrink: 0;
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #F1E4FF, #FFE0EE);
+            color: var(--purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .module-title {
+            flex: 1
+        }
+
+        .module-arrow {
+            flex-shrink: 0;
+            transition: transform .25s ease;
+            color: var(--purple)
+        }
+
+        .module[open] .module-arrow {
+            transform: rotate(180deg)
+        }
+
+        .module-body {
+            padding: 0 18px 18px 66px;
+            font-size: 14px;
+            color: var(--ink-soft);
+            line-height: 1.55
+        }
+
+        .module-body ul {
+            list-style: none;
+            padding: 0
+        }
+
+        .module-body li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 16px
+        }
+
+        .module-body li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 13px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--orange);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 28px;
+            padding: 22px 14px;
+            background: #fff;
+            border-radius: var(--r-m);
+            border: 1px solid var(--line);
+        }
+
+        .stat {
+            text-align: center
+        }
+
+        .stat-num {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: clamp(22px, 5vw, 30px);
+            background: var(--grad-purple-pink);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 10.5px;
+            color: var(--ink-soft);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 6px;
+            font-weight: 600;
+        }
+
+        /* ============ PROJECTS ============ */
+        .projects {
+            background: #fff
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 28px;
+        }
+
+        .project {
+            background: linear-gradient(180deg, #FBF6F0 0%, #fff 100%);
+            border: 1px solid var(--line);
+            border-radius: var(--r-m);
+            padding: 12px;
+            text-align: center;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-soft)
+        }
+
+        .project img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: var(--r-s);
+            margin-bottom: 8px;
+        }
+
+        .project-name {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: 13.5px;
+            color: var(--ink);
+        }
+
+        /* ============ BONUSES ============ */
+        .bonuses {
+            background: linear-gradient(135deg, #2A1A3D 0%, #4A2880 60%, #6F3DC2 100%);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bonuses::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: var(--orange);
+            filter: blur(150px);
+            opacity: .2;
+            border-radius: 50%;
+        }
+
+        .bonuses .h2 {
+            color: #fff
+        }
+
+        .bonuses .h2 em {
+            color: var(--orange-soft)
+        }
+
+        .bonuses .lead {
+            color: rgba(255, 255, 255, .75)
+        }
+
+        .bonuses-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 28px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .bonus {
+            background: rgba(255, 255, 255, .06);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: var(--r-l);
+            overflow: hidden;
+            transition: transform .25s ease, border-color .25s ease;
+        }
+
+        .bonus:hover {
+            transform: translateY(-4px);
+            border-color: rgba(219, 121, 60, .5)
+        }
+
+        .bonus-img {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden
+        }
+
+        .bonus-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .bonus-img::before {
+            content: "BONO";
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--orange);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 99px;
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        .bonus-body {
+            padding: 18px
+        }
+
+        .bonus-title {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .bonus-desc {
+            font-size: 13.5px;
+            color: rgba(255, 255, 255, .75);
+            line-height: 1.45;
+            margin-bottom: 12px
+        }
+
+        .bonus-value {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(219, 121, 60, .2);
+            border: 1px solid rgba(219, 121, 60, .4);
+            padding: 5px 11px;
+            border-radius: 99px;
+            font-size: 11.5px;
+            font-weight: 600;
+        }
+
+        .bonus-value s {
+            opacity: .6;
+            margin-right: 4px
+        }
+
+        .bonus-value b {
+            color: var(--orange-soft)
+        }
+
+        /* ============ OFFER / PRICE CARD ============ */
+        .offer {
+            background: var(--ivory);
+            position: relative
+        }
+
+        .offer-card {
+            max-width: 680px;
+            margin: 28px auto 0;
+            background: #fff;
+            border-radius: var(--r-xl);
+            overflow: hidden;
+            box-shadow: 0 30px 80px -20px rgba(74, 40, 128, .3);
+            border: 1px solid var(--line);
+            position: relative;
+        }
+
+        .offer-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--grad-main);
+        }
+
+        /* PHASE BANNER — top of card */
+        .phase-banner {
+            padding: 16px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--line);
+            font-size: 13.5px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            transition: background .4s ease;
+        }
+
+        .phase-banner.normal {
+            background: linear-gradient(135deg, #FFF1E8, #FFE5D6);
+            color: #A04518
+        }
+
+        .phase-banner.urgent {
+            background: linear-gradient(135deg, #FFE0E3, #FCC2C7);
+            color: #A0181E;
+            animation: flash 1.4s infinite
+        }
+
+        .phase-banner.recovered {
+            background: linear-gradient(135deg, #E0F5E8, #C2EAD2);
+            color: #0E5C2F
+        }
+
+        @keyframes flash {
+
+            0%,
+            100% {
+                background: linear-gradient(135deg, #FFE0E3, #FCC2C7)
+            }
+
+            50% {
+                background: linear-gradient(135deg, #FCC2C7, #F88A92)
+            }
+        }
+
+        .phase-banner b {
+            font-weight: 800
+        }
+
+        .phase-banner-icon {
+            font-size: 16px
+        }
+
+        .offer-top {
+            padding: 24px 24px 0;
+            text-align: center
+        }
+
+        .offer-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #FFE5D6, #FFC9A8);
+            color: #A04518;
+            padding: 5px 13px;
+            border-radius: 99px;
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .offer-title {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: clamp(22px, 5vw, 28px);
+            line-height: 1.15;
+            margin-bottom: 6px;
+        }
+
+        .offer-title em {
+            font-style: italic;
+            color: var(--orange)
+        }
+
+        .offer-sub {
+            font-size: 13px;
+            color: var(--ink-soft);
+            max-width: 420px;
+            margin: 0 auto
+        }
+
+        /* INCLUDES */
+        .offer-includes {
+            padding: 22px;
+            background: linear-gradient(180deg, #FBF6F0 0%, #fff 100%);
+            margin: 18px 14px 0;
+            border-radius: var(--r-m);
+            border: 1px solid var(--line);
+        }
+
+        .offer-includes h4 {
+            font-size: 10.5px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--purple);
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .offer-includes ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 7px
+        }
+
+        .offer-includes li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13.5px;
+            line-height: 1.4;
+        }
+
+        .offer-includes li svg {
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+            color: var(--green);
+            margin-top: 3px;
+        }
+
+        /* PRICE */
+        .offer-price {
+            padding: 22px;
+            text-align: center
+        }
+
+        .countdown-msg {
+            font-size: 11.5px;
+            color: var(--ink-soft);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .countdown-msg.urgent {
+            color: var(--red)
+        }
+
+        .countdown-msg.urgent::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: var(--red);
+            border-radius: 50%;
+            animation: pulse 1.4s infinite;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 18px
+        }
+
+        .cd-block {
+            background: var(--ink);
+            color: #fff;
+            border-radius: 12px;
+            padding: 10px 6px;
+            min-width: 62px;
+            text-align: center;
+            position: relative;
+            transition: background .4s ease;
+        }
+
+        .cd-block.urgent {
+            background: linear-gradient(135deg, #7A1419, #D9263A);
+            animation: shake .4s ease-in-out infinite alternate;
+        }
+
+        .cd-block.recovered {
+            background: linear-gradient(135deg, #1A6E3D, #1A9E5A)
+        }
+
+        @keyframes shake {
+            from {
+                transform: translateY(0)
+            }
+
+            to {
+                transform: translateY(-2px)
+            }
+        }
+
+        .cd-num {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: -.02em;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .cd-label {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+            opacity: .7;
+        }
+
+        .price-old {
+            display: inline-block;
+            font-size: 14px;
+            color: var(--ink-soft);
+            text-decoration: line-through;
+            margin-bottom: 4px;
+        }
+
+        .price-old::after {
+            content: " MXN"
+        }
+
+        .price-now {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 2px;
+            margin-bottom: 6px;
+        }
+
+        .price-currency {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: 24px;
+            color: var(--ink-soft);
+            margin-bottom: 8px;
+        }
+
+        .price-amount {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: clamp(48px, 12vw, 72px);
+            line-height: 1;
+            background: var(--grad-purple-pink);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -.02em;
+        }
+
+        .price-suffix {
+            font-family: 'Fraunces', serif;
+            font-size: 20px;
+            color: var(--ink-soft);
+            margin-bottom: 10px
+        }
+
+        .price-meta {
+            font-size: 12.5px;
+            color: var(--ink-soft);
+            margin-bottom: 8px
+        }
+
+        .price-installments {
+            font-size: 13px;
+            color: #0E6A3A;
+            font-weight: 700;
+            margin-bottom: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #E8F8EF, #C8F0D8);
+            padding: 6px 13px;
+            border-radius: 99px;
+            border: 1px solid #1A9E5A33;
+        }
+
+        .price-installments svg {
+            width: 14px;
+            height: 14px;
+            color: #0E6A3A
+        }
+
+        /* ============ PAYMENT ICONS — clean uniform pills ============ */
+        .payments {
+            padding: 0 22px 22px;
+            text-align: center
+        }
+
+        .payments-label {
+            font-size: 10.5px;
+            color: var(--ink-soft);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .payments-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .pi {
+            height: 34px;
+            min-width: 62px;
+            padding: 0 11px;
+            border-radius: 7px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 12px;
+            letter-spacing: .5px;
+            background: #fff;
+            border: 1px solid var(--line);
+            flex: 0 0 auto;
+            transition: transform .2s ease;
+        }
+
+        .pi:hover {
+            transform: translateY(-2px)
+        }
+
+        .pi-visa {
+            color: #1A1F71;
+            font-style: italic;
+            font-size: 14px;
+            font-weight: 900
+        }
+
+        .pi-mc {
+            padding: 0 9px;
+            gap: 0
+        }
+
+        .pi-mc-circle {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: inline-block
+        }
+
+        .pi-mc-c1 {
+            background: #EB001B
+        }
+
+        .pi-mc-c2 {
+            background: #F79E1B;
+            margin-left: -7px;
+            mix-blend-mode: multiply
+        }
+
+        .pi-amex {
+            background: #006FCF;
+            color: #fff;
+            border-color: #006FCF;
+            font-size: 11.5px
+        }
+
+        .pi-pp {
+            padding: 0 9px
+        }
+
+        .pi-pp .a {
+            color: #003087;
+            font-style: italic;
+            font-weight: 900;
+            font-size: 12.5px
+        }
+
+        .pi-pp .b {
+            color: #009CDE;
+            font-style: italic;
+            font-weight: 900;
+            font-size: 12.5px
+        }
+
+        .pi-oxxo {
+            background: #E50914;
+            color: #FFD500;
+            border-color: #E50914;
+            font-size: 13px;
+            letter-spacing: 1px
+        }
+
+        .pi-spei {
+            background: #4F2D7F;
+            color: #fff;
+            border-color: #4F2D7F;
+            font-size: 11.5px
+        }
+
+        .pi-mp {
+            background: #00B1EA;
+            color: #fff;
+            border-color: #00B1EA;
+            font-size: 11px;
+            min-width: auto;
+            padding: 0 13px;
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+
+        /* ============ GUARANTEE ============ */
+        .guarantee {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px 22px;
+            background: linear-gradient(135deg, #F5E8DC, #FBF0E5);
+            border-top: 1px solid var(--line);
+        }
+
+        .guarantee-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: var(--grad-purple-pink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            box-shadow: 0 6px 16px -4px rgba(131, 72, 217, .5);
+        }
+
+        .guarantee-icon svg {
+            width: 26px;
+            height: 26px
+        }
+
+        .guarantee-text h5 {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: 14.5px;
+            margin-bottom: 2px
+        }
+
+        .guarantee-text p {
+            font-size: 11.5px;
+            color: var(--ink-soft);
+            line-height: 1.4
+        }
+
+        /* ============ COMMUNITY (small section) ============ */
+        .community {
+            background: #fff;
+            padding: 48px 20px
+        }
+
+        .community-card {
+            background: linear-gradient(135deg, #8348D9 0%, #D66D94 100%);
+            border-radius: var(--r-xl);
+            padding: 28px 22px;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .community-card::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, .1);
+            border-radius: 50%;
+        }
+
+        .community-icon {
+            width: 54px;
+            height: 54px;
+            background: rgba(255, 255, 255, .2);
+            border: 2px solid rgba(255, 255, 255, .4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+        }
+
+        .community-icon svg {
+            width: 26px;
+            height: 26px
+        }
+
+        .community-card h3 {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: 22px;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .community-card p {
+            font-size: 14px;
+            opacity: .92;
+            max-width: 480px;
+            margin: 0 auto;
+            position: relative
+        }
+
+        /* ============ FAQ ============ */
+        .faq {
+            background: linear-gradient(180deg, #FBF6F0 0%, var(--ivory) 100%);
+            padding: 56px 20px
+        }
+
+        .faq-list {
+            max-width: 760px;
+            margin: 28px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px
+        }
+
+        .faq-item {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--r-m);
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            padding: 16px 18px;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-weight: 600;
+            font-size: 14.5px;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            margin-left: auto;
+            font-size: 22px;
+            color: var(--purple);
+            transition: transform .25s ease;
+            font-weight: 300;
+        }
+
+        .faq-item[open] summary::after {
+            transform: rotate(45deg)
+        }
+
+        .faq-item .ans {
+            padding: 0 18px 16px;
+            font-size: 14px;
+            color: var(--ink-soft);
+            line-height: 1.55
+        }
+
+        /* ============ FINAL CTA ============ */
+        .final {
+            background: linear-gradient(180deg, var(--ivory) 0%, #FBF0E5 100%);
+            text-align: center;
+            padding: 56px 20px;
+        }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: var(--ink);
+            color: rgba(255, 255, 255, .7);
+            padding: 28px 20px 22px;
+            text-align: center;
+            font-size: 11.5px;
+        }
+
+        .footer a {
+            color: var(--orange-soft)
+        }
+
+        .footer-disclaimer {
+            max-width: 680px;
+            margin: 12px auto 0;
+            font-size: 10.5px;
+            opacity: .6;
+            line-height: 1.5;
+        }
+
+        /* ============ PURCHASE NOTIFICATIONS ============ */
+        .notif {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 14px 40px -10px rgba(0, 0, 0, .25);
+            padding: 11px 32px 11px 11px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 280px;
+            z-index: 99;
+            border: 1px solid var(--line);
+            transform: translateX(-120%);
+            transition: transform .5s cubic-bezier(.16, .84, .44, 1);
+        }
+
+        .notif.show {
+            transform: translateX(0)
+        }
+
+        .notif-avatar {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--grad-purple-pink);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: 15px;
+            position: relative;
+        }
+
+        .notif-avatar::after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            width: 13px;
+            height: 13px;
+            background: var(--green);
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
+        .notif-text {
+            flex: 1;
+            min-width: 0
+        }
+
+        .notif-title {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--ink);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .notif-sub {
+            font-size: 10.5px;
+            color: var(--ink-soft);
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .notif-sub::before {
+            content: "";
+            width: 5px;
+            height: 5px;
+            background: var(--green);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .notif-close {
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            width: 18px;
+            height: 18px;
+            color: var(--ink-soft);
+            font-size: 14px;
+            line-height: 1;
+        }
+
+        /* ============ STICKY CTA ============ */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-top: 1px solid var(--line);
+            padding: 10px 14px;
+            z-index: 50;
+            display: none;
+            box-shadow: 0 -8px 24px -8px rgba(0, 0, 0, .12);
+            transform: translateY(100%);
+            transition: transform .3s ease;
+        }
+
+        .sticky-cta.visible {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateY(0)
+        }
+
+        .sticky-info {
+            flex: 1;
+            min-width: 0
+        }
+
+        .sticky-info .price-line {
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+        }
+
+        .sticky-info .sp {
+            font-size: 11px;
+            color: var(--ink-soft);
+            text-decoration: line-through;
+            font-weight: 500
+        }
+
+        .sticky-info .sn {
+            font-size: 18px;
+            color: var(--purple)
+        }
+
+        .sticky-info .sl {
+            font-size: 9.5px;
+            color: var(--ink-soft);
+            text-transform: uppercase;
+            letter-spacing: 1px
+        }
+
+        .sticky-cta .btn-primary {
+            padding: 13px 16px;
+            font-size: 13.5px;
+            width: auto;
+            max-width: none;
+            flex: 0 0 auto
+        }
+
+        /* ============ FADE-UP ============ */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity .7s ease, transform .7s ease
+        }
+
+        .fade-up.in {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media(min-width:680px) {
+            .pain-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .stats {
+                gap: 20px;
+                padding: 28px
+            }
+
+            .bonuses-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media(min-width:980px) {
+            section {
+                padding: 88px 32px
+            }
+
+            .hero {
+                padding: 48px 32px 72px
+            }
+
+            .gains-flex {
+                grid-template-columns: 1fr 1fr;
+                gap: 54px
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 16px
+            }
+
+            .bonuses-grid {
+                gap: 22px
+            }
+
+            .module summary {
+                padding: 20px 26px;
+                font-size: 16px
+            }
+
+            .module-body {
+                padding: 0 26px 22px 80px
+            }
+
+            .pain-item {
+                padding: 20px 22px
+            }
+
+            .faq {
+                padding: 88px 32px
+            }
+
+            .community {
+                padding: 88px 32px
+            }
+        }
+
+        @media(max-width:380px) {
+            .notif {
+                max-width: calc(100% - 24px);
+                left: 12px;
+                bottom: 80px
+            }
+
+            .pi {
+                min-width: 54px;
+                padding: 0 8px;
+                font-size: 11px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============ TOP BAR ============ -->
+    <div class="bar" id="bar">
+        <span class="bar-icon" id="bar-icon">⚡</span>
+        <span id="bar-text">50% OFF · termina hoy en</span>
+        <span class="bar-time" id="bar-time">--:--:--</span>
+    </div>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <div class="hero-inner">
+            <img class="hero-logo"
+                src="assets/logo-accesorios-resina.png"
+                alt="Accesorios de Resina" loading="eager">
+
+            <div class="hero-tag"><span class="hero-tag-dot"></span> Curso 100% online · Acceso de por vida</div>
+
+            <h1>Crea <em>accesorios en resina</em> que <b>se venden solos</b> en 30 días.</h1>
+            <p class="hero-sub">Aprende a crear piezas únicas y a venderlas por redes sociales — sin inventario gigante,
+                sin inversión alta.</p>
+
+            <!-- VSL — Plyr container -->
+            <div class="vsl-wrap">
+                <span class="vsl-badge">▶ Mira antes de irte</span>
+                <div id="vsl-player"></div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="https://go.hotmart.com/K103236710O?ap=73c4" class="btn-primary" target="_blank" rel="noopener">
+                    QUIERO MI ACCESO CON 50% OFF
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <div class="btn-meta">
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <path d="M5 12l5 5L20 7" />
+                        </svg> Pago único</span>
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <path d="M5 12l5 5L20 7" />
+                        </svg> Garantía 7 días</span>
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <path d="M5 12l5 5L20 7" />
+                        </svg> Acceso inmediato</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ BRAND STRIP ============ -->
+    <div class="strip" aria-hidden="true">
+        <div class="strip-track">
+            <span class="strip-item">Aretes</span>
+            <span class="strip-item">Llaveros</span>
+            <span class="strip-item">Posa vasos</span>
+            <span class="strip-item">Bandejas</span>
+            <span class="strip-item">Joyería</span>
+            <span class="strip-item">Detalles únicos</span>
+            <span class="strip-item">Aretes</span>
+            <span class="strip-item">Llaveros</span>
+            <span class="strip-item">Posa vasos</span>
+            <span class="strip-item">Bandejas</span>
+            <span class="strip-item">Joyería</span>
+            <span class="strip-item">Detalles únicos</span>
+        </div>
+    </div>
+
+    <!-- ============ PAIN POINTS ============ -->
+    <section class="pain">
+        <div class="container">
+            <span class="eyebrow">Para ti</span>
+            <h2 class="h2">Este curso es para ti si…</h2>
+
+            <div class="pain-grid">
+                <div class="pain-item">
+                    <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11l3 3L22 4" />
+                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+                        </svg></div>
+                    <p class="pain-text"><b>Te encantan las manualidades</b> y quieres convertirlas en ingresos reales.
+                    </p>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 6v6l4 2" />
+                        </svg></div>
+                    <p class="pain-text"><b>Te sientes estancada</b> y necesitas dinero extra cada mes.</p>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12l2-2 4 4 8-8 4 4" />
+                        </svg></div>
+                    <p class="pain-text"><b>Quieres trabajar desde casa</b> con horarios libres y sin patrones.</p>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23" />
+                            <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+                        </svg></div>
+                    <p class="pain-text"><b>Quieres iniciar con bajo presupuesto</b> sin endeudarte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ GAINS ============ -->
+    <section class="gains">
+        <div class="container">
+            <span class="eyebrow">Resultados reales</span>
+            <h2 class="h2">Lo que vas a <em>lograr</em></h2>
+
+            <div class="gains-flex">
+                <div class="gains-img">
+                    <img src="assets/img1.webp"
+                        alt="Accesorios de resina" loading="lazy">
+                </div>
+                <div class="gains-list">
+                    <div class="gain-row">
+                        <div class="gain-num">1</div>
+                        <p>Tu propio negocio de accesorios en resina con <b>ingresos altos</b>.</p>
+                    </div>
+                    <div class="gain-row">
+                        <div class="gain-num">2</div>
+                        <p>Piezas en tendencia con <b>calidad profesional</b>.</p>
+                    </div>
+                    <div class="gain-row">
+                        <div class="gain-num">3</div>
+                        <p>Materiales <b>accesibles en México</b> con bajo presupuesto.</p>
+                    </div>
+                    <div class="gain-row">
+                        <div class="gain-num">4</div>
+                        <p>Vender por <b>Instagram, TikTok y WhatsApp</b> sin inventario gigante.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ MODULES ============ -->
+    <section class="content">
+        <div class="container">
+            <span class="eyebrow">El programa completo</span>
+            <h2 class="h2">Todo paso a paso, <em>desde cero</em></h2>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-num">85+</div>
+                    <div class="stat-label">Clases en video</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">12h</div>
+                    <div class="stat-label">De contenido</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">8</div>
+                    <div class="stat-label">Módulos</div>
+                </div>
+            </div>
+
+            <div class="modules">
+                <details class="module" open>
+                    <summary>
+                        <span class="module-num">01</span>
+                        <span class="module-title">Bienvenida y mapa del curso</span>
+                        <svg class="module-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="module-body">
+                        <ul>
+                            <li>Cómo aprovechar el curso</li>
+                            <li>Acceso a la comunidad VIP</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="module">
+                    <summary>
+                        <span class="module-num">02</span>
+                        <span class="module-title">Teoría esencial: tipos, viscosidad, curado</span>
+                        <svg class="module-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="module-body">
+                        <ul>
+                            <li>Resinas epóxicas y UV</li>
+                            <li>Tiempos de curado</li>
+                            <li>Cómo elegir la correcta para cada proyecto</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="module">
+                    <summary>
+                        <span class="module-num">03</span>
+                        <span class="module-title">Soluciones a los 8 errores más comunes</span>
+                        <svg class="module-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="module-body">
+                        <ul>
+                            <li>Burbujas, amarillamiento, opacidad</li>
+                            <li>Piezas que se rompen o no curan</li>
+                            <li>Cómo limpiar superficies y moldes</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="module">
+                    <summary>
+                        <span class="module-num">04</span>
+                        <span class="module-title">Materiales y proveedores en México</span>
+                        <svg class="module-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="module-body">
+                        <ul>
+                            <li>Lista de materiales esenciales</li>
+                            <li>Pigmentos, moldes, herramientas</li>
+                            <li>Proveedores recomendados</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="module">
+                    <summary>
+                        <span class="module-num">05</span>
+                        <span class="module-title">Medidas y proporciones (1:1, 2:1, 3:1)</span>
+                        <svg class="module-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="module-body">
+                        <ul>
+                            <li>Cuánto producto necesita cada molde</li>
+                            <li>Cálculos para resina UV</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="module">
+                    <summary>
+                        <span class="module-num">06</span>
+                        <span class="module-title">Mezclado, pigmentación, lijado y pulido</span>
+                        <svg class="module-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="module-body">
+                        <ul>
+                            <li>Mezclado correcto sin burbujas</li>
+                            <li>Tintado y pigmentación</li>
+                            <li>Acabado de lujo</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="module">
+                    <summary>
+                        <span class="module-num">07</span>
+                        <span class="module-title">10 técnicas para tus primeras piezas</span>
+                        <svg class="module-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="module-body">
+                        <ul>
+                            <li>Encapsulado · Capas · Doming</li>
+                            <li>Joyería con biseles y moldes</li>
+                            <li>Flores secas · Shakers · Lapiceros</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="module">
+                    <summary>
+                        <span class="module-num">08</span>
+                        <span class="module-title">16 efectos profesionales que se venden</span>
+                        <svg class="module-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </summary>
+                    <div class="module-body">
+                        <ul>
+                            <li>Acuarela · Mármol · Holográfico</li>
+                            <li>Océano · Petri · Geoda · Arcoíris</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="projects">
+        <div class="container">
+            <span class="eyebrow">Lo que vas a crear</span>
+            <h2 class="h2">12 proyectos <em>listos para vender</em></h2>
+
+            <div class="projects-grid">
+                <div class="project"><img src="assets/1.png"
+                        alt="Llaveros" loading="lazy">
+                    <div class="project-name">Llaveros</div>
+                </div>
+                <div class="project"><img src="assets/2.png"
+                        alt="Placas mascotas" loading="lazy">
+                    <div class="project-name">Placas mascotas</div>
+                </div>
+                <div class="project"><img src="assets/3.png"
+                        alt="Posa vasos" loading="lazy">
+                    <div class="project-name">Posa vasos</div>
+                </div>
+                <div class="project"><img src="assets/4.png"
+                        alt="Bandejas" loading="lazy">
+                    <div class="project-name">Bandejas</div>
+                </div>
+                <div class="project"><img src="assets/5.png"
+                        alt="Aretes y collares" loading="lazy">
+                    <div class="project-name">Aretes y collares</div>
+                </div>
+                <div class="project"><img src="assets/6.png"
+                        alt="Cofre" loading="lazy">
+                    <div class="project-name">Cofre</div>
+                </div>
+                <div class="project"><img src="assets/7.png"
+                        alt="Make up" loading="lazy">
+                    <div class="project-name">Mostrador make up</div>
+                </div>
+                <div class="project"><img src="assets/8.png"
+                        alt="Marca páginas" loading="lazy">
+                    <div class="project-name">Marca páginas</div>
+                </div>
+                <div class="project"><img src="assets/9.png"
+                        alt="Pirámide" loading="lazy">
+                    <div class="project-name">Pirámide</div>
+                </div>
+                <div class="project"><img src="assets/10.png"
+                        alt="Cuadernos" loading="lazy">
+                    <div class="project-name">Cuadernos</div>
+                </div>
+                <div class="project"><img src="assets/11.png"
+                        alt="Lapiceros" loading="lazy">
+                    <div class="project-name">Lapiceros</div>
+                </div>
+                <div class="project"><img src="assets/12.png"
+                        alt="Cenicero" loading="lazy">
+                    <div class="project-name">Cenicero</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ BONUSES ============ -->
+    <section class="bonuses">
+        <div class="container">
+            <span class="eyebrow" style="color:var(--orange-soft)">Bonos exclusivos</span>
+            <h2 class="h2">6 bonos <em>gratis</em> por hoy</h2>
+
+            <div class="bonuses-grid">
+                <div class="bonus">
+                    <div class="bonus-img"><img src="assets/B1.webp"
+                            alt="Personaliza piezas" loading="lazy"></div>
+                    <div class="bonus-body">
+                        <h3 class="bonus-title">Personaliza tus piezas</h3>
+                        <p class="bonus-desc">Diseña textos en Silhouette para piezas únicas.</p>
+                        <span class="bonus-value"><s>$500 MXN</s> <b>GRATIS</b></span>
+                    </div>
+                </div>
+                <div class="bonus">
+                    <div class="bonus-img"><img src="assets/b2.webp"
+                            alt="Secar flores" loading="lazy"></div>
+                    <div class="bonus-body">
+                        <h3 class="bonus-title">Cómo secar flores naturales</h3>
+                        <p class="bonus-desc">Diferenciarte con piezas exclusivas.</p>
+                        <span class="bonus-value"><s>$500 MXN</s> <b>GRATIS</b></span>
+                    </div>
+                </div>
+                <div class="bonus">
+                    <div class="bonus-img"><img src="assets/b3.webp"
+                            alt="Encapsular recuerdos" loading="lazy"></div>
+                    <div class="bonus-body">
+                        <h3 class="bonus-title">Encapsula recuerdos</h3>
+                        <p class="bonus-desc">Dientes de leche y objetos sentimentales en resina UV.</p>
+                        <span class="bonus-value"><s>$500 MXN</s> <b>GRATIS</b></span>
+                    </div>
+                </div>
+                <div class="bonus">
+                    <div class="bonus-img"><img src="assets/b4.webp"
+                            alt="Sombras" loading="lazy"></div>
+                    <div class="bonus-body">
+                        <h3 class="bonus-title">Sombras como pigmento</h3>
+                        <p class="bonus-desc">Reusa sombras viejas y crea piezas hermosas.</p>
+                        <span class="bonus-value"><s>$500 MXN</s> <b>GRATIS</b></span>
+                    </div>
+                </div>
+                <div class="bonus">
+                    <div class="bonus-img"><img src="assets/b5.webp"
+                            alt="Navidad" loading="lazy"></div>
+                    <div class="bonus-body">
+                        <h3 class="bonus-title">Figuras navideñas</h3>
+                        <p class="bonus-desc">Piezas que vuelan en diciembre.</p>
+                        <span class="bonus-value"><s>$500 MXN</s> <b>GRATIS</b></span>
+                    </div>
+                </div>
+                <div class="bonus">
+                    <div class="bonus-img"><img
+                            src="assets/mk-curso-de-marketing.webp"
+                            alt="Marketing" loading="lazy"></div>
+                    <div class="bonus-body">
+                        <h3 class="bonus-title">Crea tu marca</h3>
+                        <p class="bonus-desc">Marketing digital para vender en redes.</p>
+                        <span class="bonus-value"><s>$700 MXN</s> <b>GRATIS</b></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ OFFER / PRICE ============ -->
+    <section class="offer" id="comprar">
+        <div class="container">
+            <span class="eyebrow" style="display:block;margin:0 auto 12px;text-align:center">Inscríbete ahora</span>
+            <h2 class="h2" style="text-align:center">Llévate <em>todo</em> con 50% OFF</h2>
+
+            <div class="offer-card">
+                <!-- PHASE BANNER (changes by time) -->
+                <div class="phase-banner normal" id="phase-banner">
+                    <span class="phase-banner-icon" id="phase-banner-icon">🔥</span>
+                    <span id="phase-banner-text"><b>Oferta de hoy</b> · expira a medianoche</span>
+                </div>
+
+                <div class="offer-top">
+                    <div class="offer-tag">🇲🇽 Oferta especial México</div>
+                    <h3 class="offer-title">Curso completo + <em>6 bonos</em></h3>
+                </div>
+
+                <div class="offer-includes">
+                    <h4>✦ Lo que incluye ✦</h4>
+                    <ul>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 12l5 5L20 7" />
+                            </svg><span><b>Curso completo</b> · 85+ clases · 12h</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 12l5 5L20 7" />
+                            </svg><span><b>6 bonos exclusivos</b> · valor $3,200 MXN</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 12l5 5L20 7" />
+                            </svg><span>Lista de proveedores en México (PDF)</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 12l5 5L20 7" />
+                            </svg><span>Comunidad VIP en WhatsApp</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 12l5 5L20 7" />
+                            </svg><span>Certificado personalizado al terminar</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 12l5 5L20 7" />
+                            </svg><span>Acceso de por vida + soporte WhatsApp</span></li>
+                    </ul>
+                </div>
+
+                <div class="offer-price">
+                    <div class="countdown-msg" id="cd-msg">⚡ La oferta expira en:</div>
+                    <div class="countdown" id="countdown">
+                        <div class="cd-block" id="cd-block-h">
+                            <div class="cd-num" id="cd-h">--</div>
+                            <div class="cd-label">Horas</div>
+                        </div>
+                        <div class="cd-block" id="cd-block-m">
+                            <div class="cd-num" id="cd-m">--</div>
+                            <div class="cd-label">Min</div>
+                        </div>
+                        <div class="cd-block" id="cd-block-s">
+                            <div class="cd-num" id="cd-s">--</div>
+                            <div class="cd-label">Seg</div>
+                        </div>
+                    </div>
+
+                    <div class="price-old">$1,266.72</div>
+                    <div class="price-now">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">633</span>
+                        <span class="price-suffix">.36</span>
+                    </div>
+                    <div class="price-meta">Precio en MXN · Pago único</div>
+                    <div class="price-installments">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="5" width="20" height="14" rx="2" />
+                            <line x1="2" y1="10" x2="22" y2="10" />
+                        </svg>
+                        Hasta <b style="margin:0 3px">12 mensualidades sin intereses</b>
+                    </div>
+
+                    <a href="https://go.hotmart.com/K103236710O?ap=73c4" class="btn-primary" target="_blank"
+                        rel="noopener">
+                        INSCRIBIRME CON 50% DE DESCUENTO
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+
+                    <div class="payments">
+                        <div class="payments-label">Pago seguro vía Hotmart</div>
+                        <div class="payments-icons">
+                            <span class="pi pi-visa">VISA</span>
+                            <span class="pi pi-mc"><span class="pi-mc-circle pi-mc-c1"></span><span
+                                    class="pi-mc-circle pi-mc-c2"></span></span>
+                            <span class="pi pi-amex">AMEX</span>
+                            <span class="pi pi-pp"><span class="a">Pay</span><span class="b">Pal</span></span>
+                            <span class="pi pi-oxxo">OXXO</span>
+                            <span class="pi pi-spei">SPEI</span>
+                            <span class="pi pi-mp">Mercado Pago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guarantee">
+                    <div class="guarantee-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <path d="M9 12l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <div class="guarantee-text">
+                        <h5>Garantía de 7 días</h5>
+                        <p>Si no es para ti, te devolvemos el 100%. Garantizado por Hotmart®.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ COMMUNITY ============ -->
+    <section class="community">
+        <div class="container">
+            <div class="community-card">
+                <div class="community-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                    </svg>
+                </div>
+                <h3>No vas a estar sola</h3>
+                <p>Acceso a una comunidad VIP en WhatsApp con cientos de mujeres que ya están vendiendo en México.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq">
+        <div class="container">
+            <span class="eyebrow">Resolvemos tus dudas</span>
+            <h2 class="h2">Preguntas <em>frecuentes</em></h2>
+
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>¿El curso es presencial?</summary>
+                    <div class="ans">No, es 100% online. Videos pregrabados que ves desde celular, laptop o tablet, a tu
+                        ritmo.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Tengo soporte para mis dudas?</summary>
+                    <div class="ans">Sí. Comunidad VIP en WhatsApp donde resolvemos dudas y compartes avances con otras
+                        alumnas.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Cuándo empieza?</summary>
+                    <div class="ans">Acceso inmediato al pagar. Empiezas en este momento y avanzas a tu ritmo.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Hasta cuándo tengo acceso?</summary>
+                    <div class="ans">De por vida. Sin fechas límite, sin renovaciones.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Recibo certificado al terminar?</summary>
+                    <div class="ans">Sí. Certificado personalizado con tu nombre, ideal para mostrar a clientes.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Qué formas de pago aceptan en México?</summary>
+                    <div class="ans">Tarjeta de crédito y débito (Visa, Mastercard, AMEX), <b>OXXO</b>, SPEI, PayPal y
+                        Mercado Pago. También a meses sin intereses.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Soy principiante, podré aprender?</summary>
+                    <div class="ans">Sí. El curso parte desde cero. Sin experiencia previa.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final">
+        <div class="container">
+            <span class="eyebrow" style="display:block;text-align:center;margin:0 auto 12px">Tu momento es ahora</span>
+            <h2 class="h2" style="text-align:center;max-width:680px;margin:0 auto 16px">Da el <em>primer paso</em> hoy
+            </h2>
+            <p class="lead" style="margin:0 auto 28px;text-align:center">En 30 días puedes tener tu primer ingreso
+                vendiendo tus piezas.</p>
+
+            <a href="https://go.hotmart.com/K103236710O?ap=73c4" class="btn-primary" target="_blank" rel="noopener"
+                style="margin:0 auto;display:inline-flex">
+                QUIERO MI ACCESO CON 50% OFF
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+            <div class="btn-meta" style="margin-top:14px">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M5 12l5 5L20 7" />
+                    </svg> Garantía 7 días</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M5 12l5 5L20 7" />
+                    </svg> Pago seguro Hotmart</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div>Copyright © 2026 · Academia Digital DYE</div>
+        <div class="footer-disclaimer">
+            Este sitio no forma parte del sitio web de Facebook ni de Facebook Inc. Los resultados pueden variar.
+        </div>
+    </footer>
+
+    <!-- ============ NOTIFICATION ============ -->
+    <div class="notif" id="notif" role="status" aria-live="polite">
+        <div class="notif-avatar" id="notif-avatar">M</div>
+        <div class="notif-text">
+            <div class="notif-title" id="notif-title">María de Guadalajara</div>
+            <div class="notif-sub" id="notif-sub">Acaba de comprar · hace 2 minutos</div>
+        </div>
+        <button class="notif-close" onclick="document.getElementById('notif').classList.remove('show')"
+            aria-label="Cerrar">×</button>
+    </div>
+
+    <!-- ============ STICKY CTA ============ -->
+    <div class="sticky-cta" id="sticky">
+        <div class="sticky-info">
+            <div class="price-line">
+                <span class="sp">$1,266.72</span>
+                <span class="sn">$633.36</span>
+            </div>
+            <div class="sl" id="sticky-label">MXN · 50% OFF</div>
+        </div>
+        <a href="https://go.hotmart.com/K103236710O?ap=73c4" class="btn-primary" target="_blank" rel="noopener">QUIERO
+            YA →</a>
+    </div>
+
+    <!-- ============ Plyr ============ -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script>
+        /* ============================================
+           VSL — Plyr with YouTube (custom poster)
+           ============================================ */
+        document.addEventListener('DOMContentLoaded', function () {
+            try {
+                const player = new Plyr('#vsl-player', {
+                    controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+                    youtube: { rel: 0, modestbranding: 1, playsinline: 1, showinfo: 0 },
+                    ratio: '16:9',
+                    autoplay: false,
+                    muted: false,
+                    hideControls: false,
+                    loadSprite: true
+                });
+
+                player.source = {
+                    type: 'video',
+                    title: 'Curso de Resina',
+                    sources: [{ src: 'm38Gi60iBeM', provider: 'youtube' }],
+                    poster: 'https://img.youtube.com/vi/m38Gi60iBeM/maxresdefault.jpg'
+                };
+            } catch (e) {
+                // fallback: simple iframe
+                const wrap = document.getElementById('vsl-player');
+                if (wrap) {
+                    wrap.innerHTML = '<iframe src="https://www.youtube.com/embed/m38Gi60iBeM?rel=0&modestbranding=1" style="width:100%;height:100%;border:0" allowfullscreen></iframe>';
+                }
+            }
+        });
+
+        /* ============================================
+           PHASE-BASED COUNTDOWN
+           - 02:00–22:59 → "normal"  (counts to next midnight)
+           - 23:00–23:59 → "urgent"  (counts to midnight, last hour)
+           - 00:00–01:59 → "recovered" (counts to 02:00, "last spot")
+           ============================================ */
+        (function () {
+            const bar = document.getElementById('bar');
+            const barIcon = document.getElementById('bar-icon');
+            const barText = document.getElementById('bar-text');
+            const barTime = document.getElementById('bar-time');
+
+            const phaseBanner = document.getElementById('phase-banner');
+            const phaseBannerIcon = document.getElementById('phase-banner-icon');
+            const phaseBannerText = document.getElementById('phase-banner-text');
+
+            const cdMsg = document.getElementById('cd-msg');
+            const cdH = document.getElementById('cd-h');
+            const cdM = document.getElementById('cd-m');
+            const cdS = document.getElementById('cd-s');
+            const blocks = [
+                document.getElementById('cd-block-h'),
+                document.getElementById('cd-block-m'),
+                document.getElementById('cd-block-s')
+            ];
+            const stickyLabel = document.getElementById('sticky-label');
+
+            function getPhase() {
+                const now = new Date();
+                const h = now.getHours();
+
+                if (h < 2) {
+                    // recovered: count to 02:00
+                    const target = new Date();
+                    target.setHours(2, 0, 0, 0);
+                    return {
+                        name: 'recovered',
+                        target,
+                        bar: { icon: '✨', text: 'Plaza recuperada solo para ti · expira en', cls: 'recovered' },
+                        banner: { icon: '🎯', text: '<b>¡Llegaste justo a tiempo!</b> La oferta cerró a medianoche, pero <b>liberamos la última plaza para ti</b>', cls: 'recovered' },
+                        cdMsg: 'Tu plaza expira en:',
+                        urgent: true,
+                        sticky: 'MXN · ÚLTIMA PLAZA'
+                    };
+                } else if (h === 23) {
+                    // last hour
+                    const target = new Date();
+                    target.setHours(24, 0, 0, 0);
+                    return {
+                        name: 'urgent',
+                        target,
+                        bar: { icon: '🔥', text: 'ÚLTIMA HORA · la oferta expira en', cls: 'urgent' },
+                        banner: { icon: '⚠️', text: '<b>ÚLTIMOS MINUTOS</b> — la oferta cierra a medianoche', cls: 'urgent' },
+                        cdMsg: '⚠️ Última hora · expira en:',
+                        urgent: true,
+                        sticky: 'MXN · ÚLTIMA HORA'
+                    };
+                } else {
+                    // normal: count to midnight
+                    const target = new Date();
+                    target.setHours(24, 0, 0, 0);
+                    return {
+                        name: 'normal',
+                        target,
+                        bar: { icon: '⚡', text: '50% OFF · termina hoy en', cls: '' },
+                        banner: { icon: '🔥', text: '<b>Oferta de hoy</b> · expira a medianoche', cls: 'normal' },
+                        cdMsg: '⚡ La oferta expira en:',
+                        urgent: false,
+                        sticky: 'MXN · 50% OFF'
+                    };
+                }
+            }
+
+            let currentPhase = '';
+
+            function applyPhase(p) {
+                if (p.name === currentPhase) return;
+                currentPhase = p.name;
+
+                // Top bar
+                bar.className = 'bar ' + (p.bar.cls || '');
+                barIcon.textContent = p.bar.icon;
+                barText.textContent = p.bar.text;
+
+                // Phase banner above price
+                phaseBanner.className = 'phase-banner ' + p.banner.cls;
+                phaseBannerIcon.textContent = p.banner.icon;
+                phaseBannerText.innerHTML = p.banner.text;
+
+                // Countdown message
+                cdMsg.textContent = p.cdMsg;
+                cdMsg.className = 'countdown-msg' + (p.urgent ? ' urgent' : '');
+
+                // Block styles
+                blocks.forEach(b => {
+                    b.className = 'cd-block' + (p.name === 'urgent' ? ' urgent' : (p.name === 'recovered' ? ' recovered' : ''));
+                });
+
+                // Sticky label
+                stickyLabel.textContent = p.sticky;
+            }
+
+            function pad(n) { return String(n).padStart(2, '0'); }
+
+            function tick() {
+                const p = getPhase();
+                applyPhase(p);
+
+                const diff = Math.max(0, p.target - Date.now());
+                const hh = Math.floor(diff / 3600000);
+                const mm = Math.floor((diff % 3600000) / 60000);
+                const ss = Math.floor((diff % 60000) / 1000);
+
+                cdH.textContent = pad(hh);
+                cdM.textContent = pad(mm);
+                cdS.textContent = pad(ss);
+
+                barTime.textContent = pad(hh) + ':' + pad(mm) + ':' + pad(ss);
+            }
+
+            tick();
+            setInterval(tick, 1000);
+        })();
+
+        /* ============================================
+           FAKE PURCHASE NOTIFICATIONS
+           ============================================ */
+        (function () {
+            const buyers = [
+                { name: 'María de Guadalajara', initial: 'M', mins: 2 },
+                { name: 'Lucía de CDMX', initial: 'L', mins: 5 },
+                { name: 'Andrea de Monterrey', initial: 'A', mins: 8 },
+                { name: 'Sofía de Puebla', initial: 'S', mins: 11 },
+                { name: 'Valeria de Tijuana', initial: 'V', mins: 14 },
+                { name: 'Camila de Querétaro', initial: 'C', mins: 17 },
+                { name: 'Daniela de León', initial: 'D', mins: 21 },
+                { name: 'Fernanda de Mérida', initial: 'F', mins: 25 },
+                { name: 'Paola de Cancún', initial: 'P', mins: 28 },
+                { name: 'Regina de Toluca', initial: 'R', mins: 32 },
+                { name: 'Karla de Veracruz', initial: 'K', mins: 36 },
+                { name: 'Itzel de Hermosillo', initial: 'I', mins: 41 },
+                { name: 'Brenda de Chihuahua', initial: 'B', mins: 45 },
+                { name: 'Gabriela de Saltillo', initial: 'G', mins: 48 },
+                { name: 'Jimena de Aguascalientes', initial: 'J', mins: 52 },
+                { name: 'Natalia de Morelia', initial: 'N', mins: 56 },
+                { name: 'Ximena de Cuernavaca', initial: 'X', mins: 60 },
+                { name: 'Renata de Tampico', initial: 'R', mins: 64 },
+                { name: 'Mariana de Vallarta', initial: 'M', mins: 68 }
+            ];
+
+            const notif = document.getElementById('notif');
+            const t = document.getElementById('notif-title');
+            const s = document.getElementById('notif-sub');
+            const a = document.getElementById('notif-avatar');
+            let i = 0;
+
+            function fmtTime(min) {
+                if (min < 1) return 'hace menos de 1 minuto';
+                if (min === 1) return 'hace 1 minuto';
+                if (min < 60) return 'hace ' + min + ' minutos';
+                const h = Math.floor(min / 60);
+                return h === 1 ? 'hace 1 hora' : 'hace ' + h + ' horas';
+            }
+
+            function show() {
+                const b = buyers[i % buyers.length];
+                t.textContent = b.name;
+                s.textContent = 'Acaba de comprar · ' + fmtTime(b.mins);
+                a.textContent = b.initial;
+                notif.classList.add('show');
+                setTimeout(() => { notif.classList.remove('show'); }, 6000);
+                i++;
+            }
+
+            setTimeout(show, 8000);
+            function loop() { show(); setTimeout(loop, 18000 + Math.random() * 7000); }
+            setTimeout(loop, 26000);
+        })();
+
+        /* ============================================
+           STICKY CTA on scroll
+           ============================================ */
+        (function () {
+            const sticky = document.getElementById('sticky');
+            const offer = document.getElementById('comprar');
+            let visible = false;
+            window.addEventListener('scroll', () => {
+                const y = window.scrollY;
+                const offerTop = offer.getBoundingClientRect().top + window.scrollY;
+                const offerBottom = offerTop + offer.offsetHeight;
+                const shouldShow = y > 600 && (y < offerTop - 100 || y > offerBottom);
+                if (shouldShow && !visible) { sticky.classList.add('visible'); visible = true; }
+                else if (!shouldShow && visible) { sticky.classList.remove('visible'); visible = false; }
+            }, { passive: true });
+        })();
+
+        /* ============================================
+           Fade-up reveal
+           ============================================ */
+        (function () {
+            const els = document.querySelectorAll('.h2,.lead,.pain-item,.gain-row,.module,.project,.bonus,.faq-item,.stats');
+            els.forEach(el => el.classList.add('fade-up'));
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+            els.forEach(el => io.observe(el));
+        })();
+    </script>
+
+</body>
+
+</html>

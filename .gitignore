@@ -1,0 +1,14 @@
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+*.log
+node_modules
+dist
+coverage
+.DS_Store
+Thumbs.db
+backup-data/
+deploy.js
