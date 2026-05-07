@@ -27,13 +27,10 @@
     <meta property="og:locale" content="es_MX">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.plyr.io" crossorigin>
     <link rel="preconnect" href="https://www.youtube.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
     <style>
         :root {
@@ -1874,17 +1871,15 @@
             <p class="hero-sub">Aprende a crear piezas únicas y a venderlas por redes sociales — sin inventario gigante,
                 sin inversión alta.</p>
 
-            <!-- VSL — Plyr container -->
+            <!-- VSL — Native YouTube Player (Robust, Fast, Trusted-Types Immune) -->
             <div class="vsl-wrap">
                 <span class="vsl-badge">▶ Mira antes de irte</span>
-                <div class="plyr__video-embed" id="vsl-player">
-                    <iframe
-                        src="https://www.youtube.com/embed/m38Gi60iBeM?origin=https://off.vagalimitada.com&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-                        allowfullscreen
-                        allowtransparency
-                        allow="autoplay"
-                    ></iframe>
-                </div>
+                <iframe
+                    src="https://www.youtube.com/embed/m38Gi60iBeM?rel=0&amp;modestbranding=1&amp;playsinline=1"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:calc(var(--r-l) - 3px);z-index:1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                ></iframe>
             </div>
 
             <div class="hero-cta">
@@ -2521,26 +2516,10 @@
             YA →</a>
     </div>
 
-    <!-- ============ Plyr ============ -->
-    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <!-- ============ VSL Script ============ -->
     <script>
-        /* ============================================
-           VSL — Plyr with YouTube
-           ============================================ */
-        document.addEventListener('DOMContentLoaded', function () {
-            try {
-                const player = new Plyr('#vsl-player', {
-                    controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-                    youtube: { rel: 0, modestbranding: 1, playsinline: 1, showinfo: 0 },
-                    ratio: '16:9',
-                    autoplay: false,
-                    muted: false,
-                    hideControls: false
-                });
-            } catch (e) {
-                console.error("Error initializing Plyr:", e);
-            }
-        });
+        /* Native styled YouTube player loads automatically without dynamic scripts */
+    </script>
 
         /* ============================================
            PHASE-BASED COUNTDOWN
