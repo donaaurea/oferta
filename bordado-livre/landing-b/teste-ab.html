@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bordado Livre - Redirecionando...</title>
+    <!-- Adicione seus metadados de favicon aqui se precisar -->
+
+    <script>
+        // COMENTÁRIO SOBRE ONDE ALTERAR PORCENTAGEM DO SPLIT
+        // A lógica abaixo faz um split automático. 
+        // Para alterar as porcentagens:
+        // Math.random() retorna um número entre 0 e 1.
+        // - < 0.5 significa 50% de chance (Landing A)
+        // - >= 0.5 significa 50% de chance (Landing B)
+        // Exemplo para 70% A e 30% B: mude de 0.5 para 0.7
+        
+        function getVariant() {
+            // Verifica se o usuário já tem uma variante salva
+            let variant = localStorage.getItem('ab_test_variant_bordado');
+            
+            if (!variant) {
+                // Se não tiver, sorteia uma nova (50/50)
+                variant = Math.random() < 0.5 ? 'A' : 'B';
+                // Salva a variante no localStorage para manter a consistência do usuário
+                localStorage.setItem('ab_test_variant_bordado', variant);
+            }
+            return variant;
+        }
+
+        // COMENTÁRIO SOBRE ONDE EDITAR VARIANTES E SEUS CAMINHOS
+        function redirectToVariant() {
+            const variant = getVariant();
+            
+            // O objeto abaixo contém os caminhos para as variantes.
+            // Para editar o destino, basta mudar os caminhos.
+            const routes = {
+                'A': './landing-a/index.html',
+                'B': './landing-b/index.html'
+            };
+            
+            // Preservar parâmetros de URL (ex: UTMs para o tráfego do Pinterest Ads)
+            const queryParams = window.location.search;
+            const hash = window.location.hash;
+            
+            // Realiza o redirecionamento
+            window.location.replace(routes[variant] + queryParams + hash);
+        }
+
+        // Executar imediatamente
+        redirectToVariant();
+    </script>
+</head>
+<body style="background-color: #f7f7f7; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; color: #333;">
+    <!-- Tela de loading simples caso o redirecionamento demore uma fração de segundo -->
+    <div>
+        <p>Carregando, por favor aguarde...</p>
+    </div>
+</body>
+</html>

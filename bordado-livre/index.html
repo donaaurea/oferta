@@ -1,60 +1,2061 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bordado Livre - Redirecionando...</title>
-    <!-- Adicione seus metadados de favicon aqui se precisar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="robots" content="index, follow">
+    <meta name="description"
+        content="Aprenda Bordado Livre do zero com aulas passo a passo. Certificado incluso + 4 bônus exclusivos. Acesso imediato por R$39,90.">
+    <title>Bordado Livre — Aprenda do Zero a Bordar Peças Incríveis</title>
 
-    <script>
-        // COMENTÁRIO SOBRE ONDE ALTERAR PORCENTAGEM DO SPLIT
-        // A lógica abaixo faz um split automático. 
-        // Para alterar as porcentagens:
-        // Math.random() retorna um número entre 0 e 1.
-        // - < 0.5 significa 50% de chance (Landing A)
-        // - >= 0.5 significa 50% de chance (Landing B)
-        // Exemplo para 70% A e 30% B: mude de 0.5 para 0.7
-        
-        function getVariant() {
-            // Verifica se o usuário já tem uma variante salva
-            let variant = localStorage.getItem('ab_test_variant_bordado');
-            
-            if (!variant) {
-                // Se não tiver, sorteia uma nova (50/50)
-                variant = Math.random() < 0.5 ? 'A' : 'B';
-                // Salva a variante no localStorage para manter a consistência do usuário
-                localStorage.setItem('ab_test_variant_bordado', variant);
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5ZDGKWLZ');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.plyr.io" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+
+    <link rel="icon" href="assets/8-1.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/8-1.png">
+
+    <style>
+        /* ============ RESET ============ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ============ TOKENS ============ */
+        :root {
+            --bg: #FFF8F3;
+            --bg-soft: #FBEFE5;
+            --bg-dark: #1F1410;
+            --ink: #1A0F0A;
+            --ink-soft: #5B463B;
+            --line: #E8D9CB;
+            --coral: #E63946;
+            --coral-dark: #C22732;
+            --coral-soft: #FA8883;
+            --gold: #C8A45C;
+            --green: #1F8A4C;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(31, 20, 16, .06);
+            --shadow-md: 0 8px 24px rgba(31, 20, 16, .10);
+            --shadow-lg: 0 20px 50px rgba(31, 20, 16, .16);
+            --shadow-cta: 0 12px 32px rgba(230, 57, 70, .35);
+            --radius-sm: 8px;
+            --radius: 14px;
+            --radius-lg: 22px;
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.55;
+            color: var(--ink);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            padding-top: 40px;
+            /* compensa a barra fixa */
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+        }
+
+        h1 {
+            font-size: clamp(28px, 6.4vw, 48px);
+        }
+
+        h2 {
+            font-size: clamp(24px, 5vw, 38px);
+        }
+
+        h3 {
+            font-size: clamp(18px, 3.4vw, 24px);
+        }
+
+        p {
+            color: var(--ink-soft);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 18px;
+        }
+
+        .container-wide {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 18px;
+        }
+
+        /* ============ TOP URGENCY BAR ============ */
+        .urgency-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, #C22732 0%, #E63946 50%, #C22732 100%);
+            color: #fff;
+            text-align: center;
+            padding: 11px 14px;
+            z-index: 9999;
+            font-size: 13.5px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 2px 14px rgba(194, 39, 50, .4);
+        }
+
+        .urgency-bar .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: #FFD93D;
+            border-radius: 50%;
+            animation: pulseDot 1s infinite;
+        }
+
+        .urgency-bar #countdown {
+            background: rgba(0, 0, 0, .28);
+            padding: 3px 9px;
+            border-radius: 5px;
+            font-variant-numeric: tabular-nums;
+            font-weight: 800;
+        }
+
+        @keyframes pulseDot {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
             }
-            return variant;
+
+            50% {
+                transform: scale(1.4);
+                opacity: .6;
+            }
         }
 
-        // COMENTÁRIO SOBRE ONDE EDITAR VARIANTES E SEUS CAMINHOS
-        function redirectToVariant() {
-            const variant = getVariant();
-            
-            // O objeto abaixo contém os caminhos para as variantes.
-            // Para editar o destino, basta mudar os caminhos.
-            const routes = {
-                'A': './landing-a/index.html',
-                'B': './landing-b/index.html'
-            };
-            
-            // Preservar parâmetros de URL (ex: UTMs para o tráfego do Pinterest Ads)
-            const queryParams = window.location.search;
-            const hash = window.location.hash;
-            
-            // Realiza o redirecionamento
-            window.location.replace(routes[variant] + queryParams + hash);
+        @media (max-width: 480px) {
+            .urgency-bar {
+                font-size: 12px;
+                padding: 9px 10px;
+                gap: 6px;
+            }
+
+            .urgency-bar .label-long {
+                display: none;
+            }
         }
 
-        // Executar imediatamente
-        redirectToVariant();
-    </script>
+        /* ============ HERO ============ */
+        .hero {
+            background:
+                radial-gradient(ellipse at top right, rgba(250, 136, 131, .22), transparent 55%),
+                radial-gradient(ellipse at bottom left, rgba(200, 164, 92, .18), transparent 55%),
+                linear-gradient(180deg, #FFF8F3 0%, #FBEFE5 100%);
+            padding: 28px 0 38px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 1px 1px, rgba(31, 20, 16, .06) 1px, transparent 0);
+            background-size: 22px 22px;
+            pointer-events: none;
+            opacity: .4;
+        }
+
+        .hero>.container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .brand-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: -15px;
+            margin-top: -50px;
+            width: 50%;
+            justify-self: center;
+            /* opacity: 50%; */
+        }
+
+        .brand-row img {
+            /* height: 56px;*/
+            width: auto;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff;
+            border: 1.5px solid var(--coral-soft);
+            color: var(--coral-dark);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 999px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            background: var(--coral);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(230, 57, 70, .18);
+        }
+
+        .headline-wrap {
+            text-align: center;
+        }
+
+        .headline-wrap h1 {
+            margin-bottom: 14px;
+            font-weight: 800;
+        }
+
+        .headline-wrap h1 em {
+            font-style: normal !important;
+            color: var(--coral);
+            font-weight: 700;
+            background: linear-gradient(180deg, transparent 65%, rgba(250, 136, 131, .35) 65%);
+            padding: 0 2px;
+        }
+
+        .headline-wrap .sub {
+            font-size: clamp(15px, 3.6vw, 18px);
+            color: var(--ink-soft);
+            max-width: 580px;
+            margin: 0 auto 22px;
+            line-height: 1.55;
+        }
+
+        .headline-wrap .sub strong {
+            color: var(--ink);
+        }
+
+        /* ===== HERO VSL (Plyr custom) ===== */
+        .hero-vsl {
+            margin: 18px auto 28px;
+            max-width: 480px;
+            position: relative;
+        }
+
+        .vsl-frame {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 6px solid #fff;
+            background: #000;
+            aspect-ratio: 16 / 9;
+        }
+
+        .vsl-frame video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Plyr theme override — coral primary */
+        .vsl-frame .plyr {
+            --plyr-color-main: #E63946;
+            --plyr-video-background: #1F1410;
+            --plyr-range-fill-background: #E63946;
+            --plyr-range-thumb-background: #ffffff;
+            --plyr-range-thumb-shadow: 0 0 0 4px rgba(230, 57, 70, .4);
+            --plyr-video-control-color: #ffffff;
+            --plyr-video-control-color-hover: #ffffff;
+            --plyr-video-control-background-hover: #E63946;
+            --plyr-video-controls-background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .7) 100%);
+            --plyr-control-icon-size: 16px;
+            --plyr-control-spacing: 9px;
+            --plyr-font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            --plyr-font-size-base: 13px;
+            --plyr-font-size-small: 12px;
+            height: 100%;
+        }
+
+        .vsl-frame .plyr--video {
+            border-radius: 0;
+            height: 100%;
+        }
+
+        .vsl-frame .plyr__control--overlaid {
+            background: #E63946;
+            box-shadow: 0 8px 24px rgba(230, 57, 70, .5);
+            padding: calc(var(--plyr-control-spacing, 10px)*1.5);
+        }
+
+        .vsl-frame .plyr__control--overlaid:hover,
+        .vsl-frame .plyr__control--overlaid:focus {
+            background: #C22732;
+        }
+
+        .vsl-frame .plyr__progress__buffer {
+            color: rgba(255, 255, 255, .25);
+        }
+
+        /* Big "click to unmute" badge over the video */
+        .vsl-unmute {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(180deg, #E63946 0%, #C22732 100%);
+            color: #fff;
+            border: none;
+            border-radius: 999px;
+            padding: 12px 22px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            cursor: pointer;
+            box-shadow: 0 12px 32px rgba(230, 57, 70, .5);
+            z-index: 999;
+            animation: unmutePulse 1.6s infinite ease-in-out;
+            transition: opacity .3s ease, transform .3s ease;
+            white-space: nowrap;
+        }
+
+        .vsl-unmute svg {
+            width: 16px;
+            height: 16px;
+            fill: #fff;
+        }
+
+        .vsl-unmute.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%) scale(.9);
+        }
+
+        @keyframes unmutePulse {
+
+            0%,
+            100% {
+                box-shadow: 0 12px 32px rgba(230, 57, 70, .5), 0 0 0 0 rgba(230, 57, 70, .55);
+            }
+
+            70% {
+                box-shadow: 0 12px 32px rgba(230, 57, 70, .5), 0 0 0 16px rgba(230, 57, 70, 0);
+            }
+        }
+
+        .hero-vsl .badge-students {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 18px auto 0;
+            background: var(--white);
+            border: 2px solid var(--coral);
+            color: var(--ink);
+            padding: 9px 16px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+            white-space: nowrap;
+        }
+
+        .hero-vsl .badge-row {
+            text-align: center;
+        }
+
+        .hero-vsl .badge-students::before {
+            content: "⭐";
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            .vsl-unmute {
+                font-size: 12.5px;
+                padding: 10px 18px;
+            }
+
+            .vsl-frame {
+                border-width: 4px;
+            }
+        }
+
+        /* Price block */
+        .price-block {
+            background: #fff;
+            border: 2px solid var(--coral);
+            border-radius: var(--radius-lg);
+            padding: 22px 18px 20px;
+            text-align: center;
+            margin: 28px auto 0;
+            max-width: 460px;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .price-block::before {
+            content: "OFERTA DE LANÇAMENTO";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--coral);
+            color: #fff;
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            white-space: nowrap;
+        }
+
+        .price-block .old {
+            color: var(--ink-soft);
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .price-block .old s {
+            color: #B85959;
+        }
+
+        .price-block .install {
+            font-family: var(--font-display);
+            font-size: clamp(34px, 8vw, 48px);
+            font-weight: 800;
+            color: var(--ink);
+            line-height: 1;
+            margin: 4px 0 2px;
+        }
+
+        .price-block .install em {
+            font-style: normal;
+            color: var(--coral);
+        }
+
+        .price-block .vista {
+            font-size: 14px;
+            color: var(--ink-soft);
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        /* CTA Button — the star */
+        .cta {
+            display: block;
+            width: 100%;
+            background: linear-gradient(180deg, #E63946 0%, #C22732 100%);
+            color: #fff !important;
+            font-family: var(--font-body);
+            font-weight: 800;
+            font-size: clamp(15px, 4vw, 18px);
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            padding: 18px 22px;
+            border-radius: 14px;
+            box-shadow: var(--shadow-cta);
+            transition: transform .15s ease, box-shadow .15s ease;
+            text-align: center;
+            position: relative;
+            animation: ctaPulse 2.2s infinite;
+            border: none;
+        }
+
+        .cta:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 18px 40px rgba(230, 57, 70, .5);
+        }
+
+        .cta:active {
+            transform: translateY(0);
+        }
+
+        .cta .arrow {
+            display: inline-block;
+            margin-left: 6px;
+            transition: transform .2s ease;
+        }
+
+        .cta:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        .cta.small {
+            font-size: 14px;
+            padding: 15px 20px;
+        }
+
+        .cta.giant {
+            /*font-size: clamp(17px, 4.5vw, 21px);
+            padding: 22px 24px;*/
+        }
+
+        @keyframes ctaPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 12px 32px rgba(230, 57, 70, .35), 0 0 0 0 rgba(230, 57, 70, .5);
+            }
+
+            50% {
+                box-shadow: 0 12px 32px rgba(230, 57, 70, .35), 0 0 0 14px rgba(230, 57, 70, 0);
+            }
+        }
+
+        .trust-line {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px 16px;
+            margin-top: 14px;
+            font-size: 12.5px;
+            color: var(--ink-soft);
+            font-weight: 600;
+        }
+
+        .trust-line span {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .trust-line span::before {
+            content: "✓";
+            color: var(--green);
+            font-weight: 800;
+        }
+
+        /* ============ QUICK BENEFITS ============ */
+        .benefits {
+            background: var(--white);
+            padding: 36px 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 18px;
+            background: var(--bg-soft);
+            border-radius: var(--radius);
+            border-left: 4px solid var(--coral);
+        }
+
+        .benefit .icon {
+            flex: 0 0 38px;
+            width: 38px;
+            height: 38px;
+            background: var(--coral);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .benefit h4 {
+            font-family: var(--font-display);
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 2px;
+        }
+
+        .benefit p {
+            font-size: 14px;
+            color: var(--ink-soft);
+            line-height: 1.5;
+        }
+
+        /* ============ GALLERY (resultados) ============ */
+        .section {
+            padding: 48px 0;
+            position: relative;
+        }
+
+        .section-head {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 28px;
+        }
+
+        .section-head h2 {
+            margin-bottom: 8px;
+        }
+
+        .section-head h2 em {
+            font-style: normal !important;
+            color: var(--coral);
+        }
+
+        .section-head p {
+            font-size: 15.5px;
+            color: var(--ink-soft);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: transform .25s ease;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 7px;
+            }
+        }
+
+        .gallery-caption {
+            text-align: center;
+            font-size: 13px;
+            color: var(--ink-soft);
+            margin-top: 14px;
+            font-style: italic;
+        }
+
+        /* ============ WHAT YOU GET ============ */
+        .what-you-get {
+            background: var(--bg-dark);
+            color: #F3E9DD;
+            padding: 56px 0;
+        }
+
+        .what-you-get h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .what-you-get h2 em {
+            font-style: normal !important;
+            color: var(--coral-soft);
+        }
+
+        .what-you-get .sec-sub {
+            text-align: center;
+            color: #C9B7A6;
+            margin-bottom: 32px;
+            font-size: 15.5px;
+        }
+
+        .modules {
+            max-width: 560px;
+            margin: 0 auto;
+            display: grid;
+            gap: 10px;
+        }
+
+        .module {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, .06);
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, .08);
+            transition: background .2s ease;
+        }
+
+        .module:hover {
+            background: rgba(255, 255, 255, .10);
+        }
+
+        .module .check {
+            flex: 0 0 26px;
+            width: 26px;
+            height: 26px;
+            background: var(--coral);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .module span {
+            font-size: 15px;
+            color: #F3E9DD;
+        }
+
+        .module span b {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        /* ============ BONUS GRID ============ */
+        .bonus {
+            background: var(--bg);
+            padding: 56px 0;
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .bonus-card {
+            background: #fff;
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+            padding: 18px 16px 16px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .bonus-card .tag {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--coral);
+            color: #fff;
+            font-size: 10.5px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            padding: 4px 10px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+
+        .bonus-card h4 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            margin: 10px 0 6px;
+            color: var(--ink);
+            line-height: 1.25;
+        }
+
+        .bonus-card p {
+            font-size: 13px;
+            line-height: 1.45;
+            color: var(--ink-soft);
+            min-height: 56px;
+        }
+
+        .bonus-card .price-tag {
+            margin-top: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--ink-soft);
+        }
+
+        .bonus-card .price-tag s {
+            color: #B85959;
+            margin-right: 4px;
+        }
+
+        .bonus-card .price-tag .free {
+            color: var(--green);
+            font-weight: 800;
+        }
+
+        .bonus-total {
+            text-align: center;
+            margin-top: 28px;
+            background: #fff;
+            border: 2px dashed var(--coral);
+            border-radius: var(--radius);
+            padding: 18px 16px;
+            max-width: 460px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bonus-total .label {
+            font-size: 13px;
+            color: var(--ink-soft);
+            font-weight: 600;
+        }
+
+        .bonus-total .val {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--ink);
+            margin-top: 4px;
+        }
+
+        .bonus-total .val s {
+            color: #B85959;
+        }
+
+        .bonus-total .val em {
+            font-style: normal;
+            color: var(--coral);
+        }
+
+        /* ============ TESTIMONIALS ============ */
+        .testimonials {
+            background: #fff;
+            padding: 56px 0;
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+            max-width: 980px;
+            margin: 0 auto;
+
+        }
+
+        .test-card {
+            background: var(--bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .test-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* MOBILE */
+        @media (max-width: 767px) {
+            .test-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* DESKTOP */
+        @media (min-width: 768px) {
+            .test-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .text-test {
+            max-width: 720px;
+            margin: 32px auto 0;
+            display: grid;
+            gap: 14px;
+        }
+
+        .quote {
+            background: var(--bg-soft);
+            padding: 18px 18px 16px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--coral-soft);
+        }
+
+        .quote .stars {
+            color: #F5A524;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .quote p {
+            color: var(--ink);
+            font-size: 15px;
+            line-height: 1.55;
+            font-style: italic;
+        }
+
+        .quote .who {
+            margin-top: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--ink-soft);
+            font-style: normal;
+        }
+
+        /* ============ MAIN OFFER (sticky-style) ============ */
+        .main-offer {
+            background:
+                radial-gradient(ellipse at top, rgba(250, 136, 131, .18), transparent 60%),
+                linear-gradient(180deg, #FFF8F3 0%, #FBEFE5 100%);
+            padding: 56px 0;
+            position: relative;
+        }
+
+        .offer-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 28px 22px;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--coral);
+            position: relative;
+        }
+
+        .offer-card::before {
+            content: "🔥 ACESSO IMEDIATO";
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--coral);
+            color: #fff;
+            padding: 7px 16px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            white-space: nowrap;
+            box-shadow: var(--shadow-md);
+        }
+
+        .offer-card h2 {
+            text-align: center;
+            font-size: clamp(22px, 5vw, 28px);
+            margin: 8px 0 14px;
+        }
+
+        .offer-card h2 em {
+            font-style: italic;
+            color: var(--coral);
+        }
+
+        .offer-includes {
+            background: var(--bg-soft);
+            border-radius: 12px;
+            padding: 16px 14px;
+            margin: 14px 0 18px;
+        }
+
+        .offer-includes h5 {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--ink);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .offer-includes ul {
+            list-style: none;
+            display: grid;
+            gap: 8px;
+        }
+
+        .offer-includes li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-size: 14.5px;
+            color: var(--ink);
+            line-height: 1.4;
+        }
+
+        .offer-includes li::before {
+            content: "✓";
+            flex: 0 0 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--green);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .offer-pricing {
+            text-align: center;
+            margin: 18px 0 14px;
+        }
+
+        .offer-pricing .anchor {
+            display: inline-block;
+            font-size: 14px;
+            color: var(--ink-soft);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .offer-pricing .anchor s {
+            color: #B85959;
+            font-weight: 700;
+        }
+
+        .offer-pricing .anchor .pct {
+            background: var(--coral);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 4px;
+            margin-left: 4px;
+        }
+
+        .offer-pricing .by {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--ink-soft);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-top: 6px;
+        }
+
+        .offer-pricing .main-price {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 9vw, 54px);
+            font-weight: 800;
+            color: var(--coral);
+            line-height: 1;
+            margin: 4px 0;
+        }
+
+        .offer-pricing .main-price small {
+            font-size: 0.4em;
+            color: var(--coral);
+            font-weight: 600;
+            vertical-align: middle;
+        }
+
+        .offer-pricing .vista-line {
+            font-size: 13.5px;
+            color: var(--ink-soft);
+            font-weight: 600;
+        }
+
+        .offer-pricing .vista-line strong {
+            color: var(--ink);
+        }
+
+        .payment-logos {
+            display: block;
+            margin: 14px auto 0;
+            max-width: 280px;
+            opacity: .8;
+        }
+
+        .security-row {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+            font-size: 12px;
+            color: var(--ink-soft);
+            font-weight: 600;
+        }
+
+        .security-row span {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* ============ GUARANTEE ============ */
+        .guarantee {
+            background: var(--white);
+            padding: 48px 0;
+        }
+
+        .guarantee-card {
+            max-width: 720px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 22px;
+            align-items: center;
+            background: var(--bg-soft);
+            border-radius: var(--radius-lg);
+            padding: 22px;
+            border: 1px solid var(--line);
+        }
+
+        .guarantee-card img {
+            width: 140px;
+            height: auto;
+        }
+
+        .guarantee-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .guarantee-card h3 em {
+            font-style: normal !important;
+            color: var(--coral);
+        }
+
+        .guarantee-card p {
+            font-size: 14.5px;
+            line-height: 1.55;
+            color: var(--ink-soft);
+        }
+
+        @media (max-width: 560px) {
+            .guarantee-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .guarantee-card img {
+                margin: 0 auto;
+                width: 120px;
+            }
+        }
+
+        /* ============ FAQ ============ */
+        .faq {
+            background: var(--bg);
+            padding: 56px 0 64px;
+        }
+
+        .faq-list {
+            max-width: 640px;
+            margin: 0 auto;
+            display: grid;
+            gap: 10px;
+        }
+
+        .faq-item {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: box-shadow .2s ease;
+        }
+
+        .faq-item[open] {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 16px 18px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--ink);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            font-size: 22px;
+            color: var(--coral);
+            font-weight: 800;
+            flex-shrink: 0;
+            transition: transform .2s ease;
+        }
+
+        .faq-item[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item .answer {
+            padding: 0 18px 16px;
+            font-size: 14.5px;
+            color: var(--ink-soft);
+            line-height: 1.6;
+        }
+
+        /* ============ FINAL CTA ============ */
+        .final-cta {
+            background: var(--bg-dark);
+            color: #fff;
+            padding: 56px 0;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .final-cta h2 em {
+            font-style: normal !important;
+            color: var(--coral-soft);
+        }
+
+        .final-cta p {
+            color: #C9B7A6;
+            max-width: 480px;
+            margin: 0 auto 24px;
+            font-size: 15.5px;
+        }
+
+        .final-cta .cta {
+            max-width: 460px;
+            margin: 0 auto;
+        }
+
+        .final-cta .trust-line {
+            color: #C9B7A6;
+            margin-top: 16px;
+        }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: #14090A;
+            color: #88766A;
+            padding: 28px 0;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .footer p {
+            color: #88766A;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .footer p+p {
+            margin-top: 6px;
+        }
+
+        /* ============ FLOATING PROOF POPUP ============ */
+        .proof-pop {
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 10px 14px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9998;
+            transform: translateX(-120%);
+            opacity: 0;
+            transition: all .5s cubic-bezier(.18, .89, .32, 1.28);
+            max-width: 320px;
+            border: 1px solid var(--line);
+        }
+
+        .proof-pop.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .proof-pop .avatar {
+            flex: 0 0 36px;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--coral) 0%, var(--coral-soft) 100%);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        .proof-pop .info {
+            font-size: 12px;
+        }
+
+        .proof-pop .info b {
+            color: var(--ink);
+            font-size: 13px;
+        }
+
+        .proof-pop .info span {
+            color: var(--coral-dark);
+            font-weight: 700;
+        }
+
+        .proof-pop .info .small {
+            color: var(--ink-soft);
+            display: block;
+            margin-top: 1px;
+        }
+
+        @media (max-width: 480px) {
+            .proof-pop {
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+                max-width: none;
+            }
+        }
+
+        /* ============ STICKY MOBILE CTA ============ */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-top: 1px solid var(--line);
+            padding: 10px 14px;
+            z-index: 9997;
+            box-shadow: 0 -8px 24px rgba(0, 0, 0, .08);
+            transform: translateY(110%);
+            transition: transform .35s ease;
+        }
+
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-cta .cta {
+            padding: 14px 18px;
+            font-size: 15px;
+        }
+
+        .sticky-cta .price-mini {
+            font-size: 12px;
+            color: var(--ink-soft);
+            text-align: center;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+
+        .sticky-cta .price-mini b {
+            color: var(--ink);
+        }
+
+        @media (min-width: 768px) {
+            .sticky-cta {
+                display: none;
+            }
+        }
+
+        /* Helper */
+        .center {
+            text-align: center;
+        }
+
+        .mt-md {
+            margin-top: 18px;
+        }
+
+        .mt-lg {
+            margin-top: 28px;
+        }
+    </style>
 </head>
-<body style="background-color: #f7f7f7; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; color: #333;">
-    <!-- Tela de loading simples caso o redirecionamento demore uma fração de segundo -->
-    <div>
-        <p>Carregando, por favor aguarde...</p>
+
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZDGKWLZ" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- URGENCY BAR -->
+    <div class="urgency-bar" role="banner">
+        <span class="pulse-dot"></span>
+        <span><span class="label-long">⚡ Vagas Preste a Esgotar </span><span class="label-short" style="display:none">⚡
+                Vagas Preste a Esgotar </span><span id="countdown">15:00</span></span>
     </div>
+
+    <!-- ============== HERO ============== -->
+    <section class="hero">
+        <div class="container">
+            <div class="brand-row">
+                <img src="assets/50-PAPINHAS-4.png" alt="Bordado Livre — Dona Áurea" loading="eager">
+            </div>
+
+            <div class="headline-wrap">
+                <div class="eyebrow">+30 mil alunas já aprenderam</div>
+                <h1>
+                    Aprenda <em>Bordado Livre</em> do Zero
+                    e Crie Peças Incríveis em Casa
+                </h1>
+                <p class="sub">
+                    O passo a passo simples em <strong>vídeo aulas</strong> para você bordar peças delicadas e
+                    profissionais — <strong>mesmo sem nunca ter pegado uma agulha</strong>.
+                </p>
+            </div>
+
+            <div class="hero-vsl">
+                <div class="vsl-frame">
+                    <video id="vsl-video" playsinline autoplay muted loop preload="metadata"
+                        poster="assets/Assista-Ao-Video.png" controlsList="nodownload noplaybackrate"
+                        oncontextmenu="return false;">
+                        <source src="assets/video-bordado-livre.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos HTML5.
+                    </video>
+                    <button id="vsl-unmute" class="vsl-unmute" type="button" aria-label="Ativar som do vídeo">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.5 12C16.5 10.23 15.48 8.71 14 7.97V16.02C15.48 15.29 16.5 13.77 16.5 12ZM19 12C19 15.11 17.18 17.79 14.5 19.06V21C18.25 19.63 21 16.13 21 12C21 7.87 18.25 4.37 14.5 3V4.94C17.18 6.21 19 8.89 19 12ZM3 9V15H7L12 20V4L7 9H3Z" />
+                        </svg>
+                        Clique para Ouvir com Som
+                    </button>
+                </div>
+                <div class="badge-row">
+                    <div class="badge-students">Faça parte desse grupo!</div>
+                </div>
+            </div>
+
+            <div class="price-block">
+                <div class="old">De <s>R$ 97,90</s> por apenas:</div>
+                <div class="install">5x de <em>R$ 8,69</em></div>
+                <div class="vista">ou <strong>R$ 39,90</strong> à vista no Pix/Cartão</div>
+
+                <a href="https://go.hotmart.com/M105699336R?ap=4b46" class="cta giant" id="cta-hero">
+                    QUERO COMEÇAR AGORA <span class="arrow">→</span>
+                </a>
+
+                <div class="trust-line">
+                    <span>Acesso imediato</span>
+                    <span>Garantia 7 dias</span>
+                    <span>Certificado incluso</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== QUICK BENEFITS ============== -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <div class="icon">1</div>
+                    <div>
+                        <h4>Passo a passo do zero</h4>
+                        <p>Aulas curtas e simples. Mesmo que você nunca tenha bordado, vai conseguir.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="icon">2</div>
+                    <div>
+                        <h4>Moldes e riscos inclusos</h4>
+                        <p>eBook completo com dezenas de riscos prontos pra você começar hoje.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="icon">3</div>
+                    <div>
+                        <h4>Bordados que vendem</h4>
+                        <p>Aprenda técnicas que viram peças incríveis — pra você, sua família ou pra vender.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== RESULTS GALLERY ============== -->
+    <section class="section" style="background: var(--bg);">
+        <div class="container-wide">
+            <div class="section-head">
+                <h2>Veja o que as alunas <em>estão criando</em></h2>
+                <p>Trabalhos reais feitos por mulheres que começaram do absoluto zero</p>
+            </div>
+
+            <div class="gallery-grid">
+                <img src="assets/1-4.png" alt="Bordado de aluna 1" loading="lazy">
+                <img src="assets/2-4.png" alt="Bordado de aluna 2" loading="lazy">
+                <img src="assets/3-4.png" alt="Bordado de aluna 3" loading="lazy">
+                <img src="assets/4-3.png" alt="Bordado de aluna 4" loading="lazy">
+                <img src="assets/5-3.png" alt="Bordado de aluna 5" loading="lazy">
+                <img src="assets/6-3.png" alt="Bordado de aluna 6" loading="lazy">
+                <img src="assets/7-1.png" alt="Bordado de aluna 7" loading="lazy">
+                <img src="assets/8-1.png" alt="Bordado de aluna 8" loading="lazy">
+                <img src="assets/9-1.png" alt="Bordado de aluna 9" loading="lazy">
+            </div>
+            <p class="gallery-caption">Cada uma dessas peças começou com uma simples agulha e o passo a passo do curso.
+            </p>
+
+            <div style="max-width: 460px; margin: 28px auto 0;">
+                <a href="https://go.hotmart.com/M105699336R?ap=4b46" class="cta">
+                    QUERO APRENDER A FAZER ASSIM <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== WHAT YOU GET ============== -->
+    <section class="what-you-get">
+        <div class="container">
+            <h2>Tudo o que você vai <em>aprender</em></h2>
+            <p class="sec-sub">Um curso completo, do básico ao avançado, em vídeo aulas em HD</p>
+
+            <div class="modules">
+                <div class="module">
+                    <div class="check">✓</div><span><b>Materiais e ferramentas:</b> tudo o que você precisa pra
+                        começar</span>
+                </div>
+                <div class="module">
+                    <div class="check">✓</div><span><b>Os pontos essenciais</b> do bordado livre, um a um</span>
+                </div>
+                <div class="module">
+                    <div class="check">✓</div><span><b>Como riscar e transferir desenhos</b> pro tecido</span>
+                </div>
+                <div class="module">
+                    <div class="check">✓</div><span><b>Técnicas de cores e combinações</b> que valorizam suas
+                        peças</span>
+                </div>
+                <div class="module">
+                    <div class="check">✓</div><span><b>Bordado em peças prontas:</b> roupas, panos, almofadas</span>
+                </div>
+                <div class="module">
+                    <div class="check">✓</div><span><b>Técnicas avançadas</b> de bordado em alto relevo</span>
+                </div>
+                <div class="module">
+                    <div class="check">✓</div><span><b>Como precificar e vender</b> seus trabalhos</span>
+                </div>
+                <div class="module">
+                    <div class="check">✓</div><span><b>Acesso vitalício</b> + atualizações futuras grátis</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== BONUS ============== -->
+    <section class="bonus">
+        <div class="container">
+            <div class="section-head">
+                <h2>E você ainda recebe <em>4 bônus grátis</em></h2>
+                <p>Para acelerar ainda mais os seus resultados</p>
+            </div>
+
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <div class="tag">BÔNUS 1</div>
+                    <h4>eBook de Riscos Exclusivos</h4>
+                    <p>Dezenas de riscos prontos pra você imprimir e bordar imediatamente.</p>
+                    <div class="price-tag"><s>R$ 35,90</s> <span class="free">GRÁTIS</span></div>
+                </div>
+                <div class="bonus-card">
+                    <div class="tag">BÔNUS 2</div>
+                    <h4>eBook Ponto Cruz + Ponto Russo</h4>
+                    <p>Domine duas técnicas extras que ampliam tudo o que você pode criar.</p>
+                    <div class="price-tag"><s>R$ 39,90</s> <span class="free">GRÁTIS</span></div>
+                </div>
+                <div class="bonus-card">
+                    <div class="tag">BÔNUS 3</div>
+                    <h4>eBook Bordado Livre Avançado</h4>
+                    <p>Guia completo de técnicas avançadas pra você impressionar nos detalhes.</p>
+                    <div class="price-tag"><s>R$ 39,90</s> <span class="free">GRÁTIS</span></div>
+                </div>
+                <div class="bonus-card">
+                    <div class="tag">BÔNUS 4</div>
+                    <h4>Grupo VIP no Telegram</h4>
+                    <p>Comunidade exclusiva de alunas pra trocar dicas e tirar dúvidas.</p>
+                    <div class="price-tag"><s>R$ 19,90</s> <span class="free">GRÁTIS</span></div>
+                </div>
+            </div>
+
+            <div class="bonus-total">
+                <div class="label">Valor total dos bônus:</div>
+                <div class="val"><s>R$ 135,60</s> &nbsp;<em>GRÁTIS HOJE</em></div>
+            </div>
+
+            <div style="max-width: 460px; margin: 28px auto 0;">
+                <a href="https://go.hotmart.com/M105699336R?ap=4b46" class="cta">
+                    QUERO O CURSO + OS 4 BÔNUS <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== TESTIMONIALS ============== -->
+    <section class="testimonials">
+        <div class="container-wide">
+            <div class="section-head">
+                <h2>O que as alunas <em>estão dizendo</em></h2>
+                <p>Histórias reais de quem começou do zero e hoje borda peças incríveis</p>
+            </div>
+
+            <div class="test-grid">
+                <div class="test-card"><img src="assets/WhatsApp-Image-2024-11-13-at-17.33.22-1.jpeg"
+                        alt="Depoimento de aluna" loading="lazy"></div>
+                <div class="test-card"><img src="assets/WhatsApp-Image-2024-11-13-at-17.33.22-2.jpeg"
+                        alt="Depoimento de aluna" loading="lazy"></div>
+                <div class="test-card"><img src="assets/WhatsApp-Image-2024-11-13-at-17.33.22.jpeg"
+                        alt="Depoimento de aluna" loading="lazy"></div>
+                <div class="test-card"><img src="assets/WhatsApp-Image-2024-11-13-at-20.42.34.jpeg"
+                        alt="Depoimento de aluna" loading="lazy"></div>
+                <div class="test-card"><img src="assets/8-2.png" alt="Depoimento de aluna" loading="lazy"></div>
+                <div class="test-card"><img src="assets/9-2.png" alt="Depoimento de aluna" loading="lazy"></div>
+            </div>
+
+            <div class="text-test">
+                <div class="quote">
+                    <div class="stars">★★★★★</div>
+                    <p>"Eu sempre quis aprender a bordar e nunca achava ninguém que ensinasse de verdade. Em uma semana
+                        já tinha terminado minha primeira peça e fiquei emocionada. Recomendo demais!"</p>
+                    <div class="who">— Mariana S., Belo Horizonte</div>
+                </div>
+                <div class="quote">
+                    <div class="stars">★★★★★</div>
+                    <p>"Comprei achando que ia ser difícil, mas a Dona Áurea explica tudo com tanta calma e detalhe que
+                        parece que ela tá do meu lado. Já comecei a vender minhas peças aqui no bairro!"</p>
+                    <div class="who">— Aline P., Curitiba</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== MAIN OFFER ============== -->
+    <section class="main-offer" id="oferta">
+        <div class="container">
+            <div class="offer-card">
+                <h2>Comece <em>hoje</em> a bordar</h2>
+
+                <div class="offer-includes">
+                    <h5>Você leva tudo isso:</h5>
+                    <ul>
+                        <li>Curso completo em vídeo aulas (acesso vitalício)</li>
+                        <li>eBook de Riscos exclusivos</li>
+                        <li>eBook Ponto Cruz + Ponto Russo</li>
+                        <li>eBook Bordado Livre Avançado</li>
+                        <li>Grupo VIP no Telegram</li>
+                        <li>Certificado de conclusão válido em todo o Brasil</li>
+                        <li>Garantia incondicional de 7 dias</li>
+                    </ul>
+                </div>
+
+                <div class="offer-pricing">
+                    <span class="anchor">De <s>R$ 97,90</s> <span class="pct">-59%</span></span>
+                    <span class="by">por apenas</span>
+                    <div class="main-price">R$ 39,<small>90</small></div>
+                    <div class="vista-line">à vista no Pix · ou <strong>5x de R$ 8,69</strong> no cartão</div>
+                </div>
+
+                <a href="https://go.hotmart.com/M105699336R?ap=4b46" class="cta giant" id="cta-main">
+                    ACESSAR O CURSO AGORA <span class="arrow">→</span>
+                </a>
+
+                <img src="assets/payments-logo-1.png" class="payment-logos" alt="Formas de pagamento seguras"
+                    loading="lazy">
+
+                <div class="security-row">
+                    <span>🔒 Pagamento seguro</span>
+                    <span>⚡ Acesso imediato</span>
+                    <span>🛡️ Garantia 7 dias</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== GUARANTEE ============== -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee-card">
+                <img src="assets/SELO-7-DIAS.webp" alt="Garantia incondicional de 7 dias" loading="lazy">
+                <div>
+                    <h3>Garantia incondicional de <em>7 dias</em></h3>
+                    <p>Experimente o curso por 7 dias sem nenhum risco. Se por qualquer motivo você achar que o conteúdo
+                        não é pra você, basta enviar um e-mail e devolvemos <strong>100% do seu dinheiro</strong>. Sem
+                        perguntas, sem complicação.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== FAQ ============== -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-head">
+                <h2>Perguntas <em>frequentes</em></h2>
+            </div>
+
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>Sou iniciante, vou conseguir aprender?</summary>
+                    <div class="answer">Sim! O curso foi feito justamente pensando em quem nunca pegou uma agulha. As
+                        aulas são curtas, em vídeo HD, e a Dona Áurea explica cada detalhe com calma. Mais de 30 mil
+                        alunas já começaram do zero.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Quanto tempo tenho de acesso?</summary>
+                    <div class="answer">Acesso vitalício. Você pode assistir quantas vezes quiser, no seu ritmo, pra
+                        sempre. E ainda recebe todas as atualizações futuras de graça.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Como vou receber o curso?</summary>
+                    <div class="answer">Após a confirmação do pagamento, você recebe na hora um e-mail com seu login e
+                        senha de acesso à área de membros. Funciona em celular, tablet e computador.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Posso pagar no Pix ou parcelar?</summary>
+                    <div class="answer">Sim. Você pode pagar via Pix, boleto ou cartão (até 5x). O pagamento é
+                        processado pela Hotmart com segurança total.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>E se eu não gostar?</summary>
+                    <div class="answer">Você tem 7 dias de garantia incondicional. Se não gostar por qualquer motivo,
+                        devolvemos seu dinheiro integralmente. Sem perguntas.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>O certificado é válido?</summary>
+                    <div class="answer">Sim. O certificado é emitido pela Academia Produtos Digitais com carga horária e
+                        é válido em todo território nacional conforme o Decreto Presidencial N° 5.154.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== FINAL CTA ============== -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Sua jornada no <em>bordado</em> começa agora</h2>
+            <p>Mais de 30.000 mulheres já transformaram um hobby em paixão (e renda extra). A próxima pode ser você.</p>
+            <a href="https://go.hotmart.com/M105699336R?ap=4b46" class="cta giant" id="cta-final">
+                QUERO MEU ACESSO POR R$ 39,90 <span class="arrow">→</span>
+            </a>
+            <div class="trust-line" style="justify-content: center;">
+                <span style="color: #C9B7A6;">5x de R$ 8,69 no cartão</span>
+                <span style="color: #C9B7A6;">Acesso imediato</span>
+                <span style="color: #C9B7A6;">Garantia 7 dias</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== FOOTER ============== -->
+    <footer class="footer">
+        <div class="container">
+            <p><strong style="color: #C9B7A6;">Bordado Livre — Dona Áurea</strong></p>
+            <p>© 2025 Academia Produtos Digitais. Todos os direitos reservados.</p>
+            <p style="margin-top: 12px; font-size: 11px;">Este site não é afiliado ao Facebook, Instagram ou Pinterest.
+                Resultados podem variar conforme dedicação individual.</p>
+        </div>
+    </footer>
+
+    <!-- ============== STICKY CTA MOBILE ============== -->
+    <div class="sticky-cta" id="stickyCta">
+        <a href="https://go.hotmart.com/M105699336R?ap=4b46" class="cta">
+            COMEÇAR POR R$ 39,90 →
+        </a>
+        <div class="price-mini">ou <b>5x de R$ 8,69</b> · garantia 7 dias</div>
+    </div>
+
+    <!-- ============== SCRIPTS ============== -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js" defer></script>
+    <script>
+        // ===== PLYR VSL INIT (cor tema coral) =====
+        (function () {
+            function start() {
+                if (typeof Plyr === 'undefined') { setTimeout(start, 80); return; }
+                const video = document.getElementById('vsl-video');
+                const unmuteBtn = document.getElementById('vsl-unmute');
+                if (!video) return;
+
+                const player = new Plyr(video, {
+                    controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+                    autoplay: true,
+                    muted: true,
+                    loop: { active: true },
+                    hideControls: false,
+                    ratio: '16:9',
+                    clickToPlay: true,
+                    keyboard: { focused: true, global: false },
+                    tooltips: { controls: false, seek: true },
+                    displayDuration: false,
+                    invertTime: false,
+                    iconUrl: 'https://cdn.plyr.io/3.7.8/plyr.svg',
+                    blankVideo: 'https://cdn.plyr.io/static/blank.mp4'
+                });
+
+                // Garante autoplay muted em mobile
+                player.on('ready', () => {
+                    player.muted = true;
+                    const playPromise = player.play();
+                    if (playPromise && typeof playPromise.catch === 'function') {
+                        playPromise.catch(() => { });
+                    }
+                });
+
+                // Unmute helper — clique no badge ativa som + esconde
+                function unmute() {
+                    player.muted = false;
+                    player.volume = 1;
+                    if (unmuteBtn) unmuteBtn.classList.add('hidden');
+                    const p = player.play();
+                    if (p && typeof p.catch === 'function') p.catch(() => { });
+                }
+                if (unmuteBtn) {
+                    unmuteBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        unmute();
+                    });
+                }
+
+                // Quando o usuário interage com o player (mexe no volume / clica em mute), esconde o badge
+                player.on('volumechange', () => {
+                    if (!player.muted && unmuteBtn) unmuteBtn.classList.add('hidden');
+                });
+                player.on('play', () => {
+                    // se já estiver com som, esconde
+                    if (!player.muted && unmuteBtn) unmuteBtn.classList.add('hidden');
+                });
+
+                // Tracking de engajamento de vídeo (dataLayer)
+                let fired25 = false, fired50 = false, fired75 = false, firedComplete = false;
+                player.on('timeupdate', () => {
+                    try {
+                        const dur = player.duration || 0;
+                        if (!dur) return;
+                        const pct = (player.currentTime / dur) * 100;
+                        window.dataLayer = window.dataLayer || [];
+                        if (pct >= 25 && !fired25) { fired25 = true; window.dataLayer.push({ event: 'vsl_25' }); }
+                        if (pct >= 50 && !fired50) { fired50 = true; window.dataLayer.push({ event: 'vsl_50' }); }
+                        if (pct >= 75 && !fired75) { fired75 = true; window.dataLayer.push({ event: 'vsl_75' }); }
+                    } catch (e) { }
+                });
+                player.on('ended', () => {
+                    if (firedComplete) return;
+                    firedComplete = true;
+                    try {
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({ event: 'vsl_complete' });
+                    } catch (e) { }
+                });
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', start);
+            } else {
+                start();
+            }
+        })();
+
+        // ===== COUNTDOWN TIMER (persistido em localStorage) =====
+        (function () {
+            const duration = 15 * 60 * 1000; // 15 min
+            const KEY = "bl_offer_end_v1";
+            let target = parseInt(localStorage.getItem(KEY), 10);
+            if (!target || target <= Date.now()) {
+                target = Date.now() + duration;
+                localStorage.setItem(KEY, target);
+            }
+            const el = document.getElementById("countdown");
+            function tick() {
+                let rem = target - Date.now();
+                if (rem <= 0) {
+                    target = Date.now() + duration;
+                    localStorage.setItem(KEY, target);
+                    rem = duration;
+                }
+                const m = Math.floor(rem / 60000);
+                const s = Math.floor((rem % 60000) / 1000);
+                el.textContent = String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+            }
+            tick();
+            setInterval(tick, 1000);
+
+            // mobile shorter label
+            function adjustLabel() {
+                const longEl = document.querySelector(".label-long");
+                const shortEl = document.querySelector(".label-short");
+                if (window.innerWidth < 420) {
+                    if (longEl) longEl.style.display = "none";
+                    if (shortEl) shortEl.style.display = "inline";
+                } else {
+                    if (longEl) longEl.style.display = "inline";
+                    if (shortEl) shortEl.style.display = "none";
+                }
+            }
+            adjustLabel();
+            window.addEventListener("resize", adjustLabel);
+        })();
+
+        // ===== STICKY MOBILE CTA — aparece após scroll do hero =====
+        (function () {
+            const sticky = document.getElementById("stickyCta");
+            const hero = document.querySelector(".hero");
+            function onScroll() {
+                if (!hero || !sticky) return;
+                const heroBottom = hero.getBoundingClientRect().bottom;
+                if (heroBottom < 0) sticky.classList.add("visible");
+                else sticky.classList.remove("visible");
+            }
+            window.addEventListener("scroll", onScroll, { passive: true });
+            onScroll();
+        })();
+
+        // ===== PROOF POPUPS (notificação de compra) =====
+        (function () {
+            const names = ["Mariana S.", "Aline P.", "Camila O.", "Beatriz L.", "Fernanda R.", "Juliana C.", "Renata G.", "Patrícia A.", "Carla M.", "Letícia F.", "Cláudia D.", "Amanda B.", "Vanessa T.", "Bruna N.", "Luciana V."];
+            const cities = ["São Paulo", "Rio de Janeiro", "Belo Horizonte", "Curitiba", "Porto Alegre", "Salvador", "Fortaleza", "Recife", "Goiânia", "Campinas", "Brasília", "Manaus", "Florianópolis", "Vitória", "Natal"];
+            function showProof() {
+                const n = names[Math.floor(Math.random() * names.length)];
+                const c = cities[Math.floor(Math.random() * cities.length)];
+                const min = Math.floor(Math.random() * 38) + 2;
+                const initial = n.charAt(0);
+                const el = document.createElement("div");
+                el.className = "proof-pop";
+                el.innerHTML = `
+      <div class="avatar">${initial}</div>
+      <div class="info">
+        <b>${n}</b> · ${c}<br>
+        <span>Acabou de se inscrever</span> <span class="small">há ${min} min</span>
+      </div>
+    `;
+                document.body.appendChild(el);
+                setTimeout(() => el.classList.add("visible"), 100);
+                setTimeout(() => {
+                    el.classList.remove("visible");
+                    setTimeout(() => el.remove(), 600);
+                }, 5500);
+            }
+            // primeiro depois de 8s, depois a cada 18-25s
+            setTimeout(() => {
+                showProof();
+                setInterval(showProof, 22000);
+            }, 8000);
+        })();
+
+        // ===== CTA CLICK TRACKING (datalayer) =====
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'page_view_lp',
+            'variant': 'B'
+        });
+
+        document.addEventListener('click', function (e) {
+            const link = e.target.closest('a');
+            if (link && link.href) {
+                // Tracking CTA clicks
+                if (link.classList.contains('cta') || link.href.includes('go.hotmart.com') || link.innerText.toLowerCase().includes('comprar') || link.innerText.toLowerCase().includes('quero')) {
+                    window.dataLayer.push({
+                        'event': 'cta_click',
+                        'variant': 'B',
+                        'cta_id': link.id || 'unknown',
+                        'cta_text': (link.textContent || '').trim().slice(0, 60),
+                        'link_url': link.href
+                    });
+
+                    // Tracking Checkout openings
+                    if (link.href.includes('go.hotmart.com')) {
+                        window.dataLayer.push({
+                            'event': 'checkout_open',
+                            'variant': 'B',
+                            'product': 'Bordado Livre'
+                        });
+                    }
+                }
+            }
+        });
+
+        // ===== DEFENSES =====
+        document.addEventListener("contextmenu", e => e.preventDefault());
+        document.addEventListener("keydown", e => {
+            if ((e.ctrlKey && ['s', 'S', 'u', 'U'].includes(e.key)) ||
+                e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && ['I', 'J'].includes(e.key))) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
 </body>
+
 </html>
