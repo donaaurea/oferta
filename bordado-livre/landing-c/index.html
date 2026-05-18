@@ -73,16 +73,16 @@
             --ink: #1A0F0A;
             --ink-soft: #5B463B;
             --line: #E8D9CB;
-            --coral: #007020;
-            --coral-dark: #007020;
-            --coral-soft: #2a7b41;
+            --coral: #E63946;
+            --coral-dark: #C22732;
+            --coral-soft: #FA8883;
             --gold: #C8A45C;
             --green: #1F8A4C;
             --white: #ffffff;
             --shadow-sm: 0 2px 8px rgba(31, 20, 16, .06);
             --shadow-md: 0 8px 24px rgba(31, 20, 16, .10);
             --shadow-lg: 0 20px 50px rgba(31, 20, 16, .16);
-            --shadow-cta: 0 12px 32px rgb(80 230 57 / 35%);
+            --shadow-cta: 0 12px 32px rgba(230, 57, 70, .35);
             --radius-sm: 8px;
             --radius: 14px;
             --radius-lg: 22px;
@@ -147,7 +147,7 @@
             top: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(90deg, #007020 0%, #007020 50%, #007020 100%);
+            background: linear-gradient(90deg, #C22732 0%, #E63946 50%, #C22732 100%);
             color: #fff;
             text-align: center;
             padding: 11px 14px;
@@ -165,7 +165,7 @@
         .urgency-bar .pulse-dot {
             width: 8px;
             height: 8px;
-            background: #ff7100;
+            background: #FFD93D;
             border-radius: 50%;
             animation: pulseDot 1s infinite;
         }
@@ -284,7 +284,7 @@
             font-style: normal !important;
             color: var(--coral);
             font-weight: 700;
-            background: linear-gradient(180deg, transparent 65%, rgb(146 250 131 / 35%) 65%);
+            background: linear-gradient(180deg, transparent 65%, rgba(250, 136, 131, .35) 65%);
             padding: 0 2px;
         }
 
@@ -326,14 +326,14 @@
 
         /* Plyr theme override — coral primary */
         .vsl-frame .plyr {
-            --plyr-color-main: #007020;
+            --plyr-color-main: #E63946;
             --plyr-video-background: #1F1410;
-            --plyr-range-fill-background: #007020;
+            --plyr-range-fill-background: #E63946;
             --plyr-range-thumb-background: #ffffff;
-            --plyr-range-thumb-shadow: 0 0 0 4px rgb(57 230 72 / 35%);
+            --plyr-range-thumb-shadow: 0 0 0 4px rgba(230, 57, 70, .4);
             --plyr-video-control-color: #ffffff;
             --plyr-video-control-color-hover: #ffffff;
-            --plyr-video-control-background-hover: #007020;
+            --plyr-video-control-background-hover: #E63946;
             --plyr-video-controls-background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .7) 100%);
             --plyr-control-icon-size: 16px;
             --plyr-control-spacing: 9px;
@@ -349,14 +349,14 @@
         }
 
         .vsl-frame .plyr__control--overlaid {
-            background: #007020;
+            background: #E63946;
             box-shadow: 0 8px 24px rgba(230, 57, 70, .5);
             padding: calc(var(--plyr-control-spacing, 10px)*1.5);
         }
 
         .vsl-frame .plyr__control--overlaid:hover,
         .vsl-frame .plyr__control--overlaid:focus {
-            background: #007020;
+            background: #C22732;
         }
 
         .vsl-frame .plyr__progress__buffer {
@@ -369,7 +369,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: linear-gradient(180deg, #007020 0%, #007020 100%);
+            background: linear-gradient(180deg, #E63946 0%, #C22732 100%);
             color: #fff;
             border: none;
             border-radius: 999px;
@@ -405,7 +405,7 @@
 
             0%,
             100% {
-                box-shadow: 0 12px 32px rgb(57 230 72 / 35%), 0 0 0 0 rgb(64 230 57 / 50%);
+                box-shadow: 0 12px 32px rgba(230, 57, 70, .5), 0 0 0 0 rgba(230, 57, 70, .55);
             }
 
             70% {
@@ -514,7 +514,7 @@
         .cta {
             display: block;
             width: 100%;
-            background: linear-gradient(180deg, #007020 0%, #007020 100%);
+            background: linear-gradient(180deg, #E63946 0%, #C22732 100%);
             color: #fff !important;
             font-family: var(--font-body);
             font-weight: 800;
@@ -564,11 +564,11 @@
 
             0%,
             100% {
-                box-shadow: 0 12px 32px rgb(57 230 72 / 35%), 0 0 0 0 rgb(64 230 57 / 50%);
+                box-shadow: 0 12px 32px rgba(230, 57, 70, .35), 0 0 0 0 rgba(230, 57, 70, .5);
             }
 
             50% {
-                box-shadow: 0 12px 32px rgb(68 230 57 / 35%), 0 0 0 14px rgba(230, 57, 70, 0);
+                box-shadow: 0 12px 32px rgba(230, 57, 70, .35), 0 0 0 14px rgba(230, 57, 70, 0);
             }
         }
 
@@ -1139,7 +1139,6 @@
             margin: 14px auto 0;
             max-width: 280px;
             opacity: .8;
-            filter: invert(1);
         }
 
         .security-row {
@@ -1499,6 +1498,9 @@
                         </svg>
                         Clique para Ouvir com Som
                     </button>
+                </div>
+                <div class="badge-row">
+                    <div class="badge-students">Faça parte desse grupo!</div>
                 </div>
             </div>
 
