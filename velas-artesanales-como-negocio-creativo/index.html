@@ -1499,7 +1499,7 @@
         controls: ['play', 'progress', 'volume'],
         muted: true,
         autoplay: false,       // we control play manually for reliability
-        clickToPlay: true,
+        clickToPlay: false,
         keyboard: { focused: false, global: false },
         fullscreen: { enabled: false, fallback: false, iosNative: false },
         hideControls: true,
@@ -1540,6 +1540,7 @@
          MUTE OVERLAY → ACTIVATE SOUND
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
       function activateSound() {
+        if (hasUnmuted) return; // Prevent multiple triggers from touch/click events
         /* 1. Mark as unmuted (user engaged and is listening to the offer) */
         hasUnmuted = true;
 
