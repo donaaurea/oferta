@@ -1711,10 +1711,100 @@
       var vacancyFloor = 3;
       var lastIdxs = { name: -1, city: -1, msg: -1, time: -1 };
 
-      var prePlayTimers = [];
-      var prePitchTimers = [];
-      var postCtaTimers = [];
+      // Timers for the unified sequential runner and post-CTA notifications
+      var currentRunnerTimer = null;
+      var currentRunnerHideTimer = null;
+      var postCtaTimer = null;
       var notifHideTimer = null;
+
+      // Sequenced notifications for Phase 1 (Pre-play / Muted overlay active)
+      var PHASE1_NOTIFS = [
+        {
+          title: '⚠️ No cierres esta página',
+          desc: 'Tu acceso a esta presentación puede perderse si sales ahora.',
+          time: 'DISPONIBLE AHORA',
+          type: 'urgency',
+          avatar: '⚠️',
+          showDelay: 3000,
+          duration: 6000
+        },
+        {
+          title: '🔊 Activa el sonido para continuar',
+          desc: 'El video empieza desde el inicio cuando tocas la pantalla.',
+          time: 'TOCA PARA ESCUCHAR',
+          type: 'trust',
+          avatar: '🔊',
+          showDelay: 6000,
+          duration: 6000
+        },
+        {
+          title: '⏳ Tu descuento está reservado por tiempo limitado',
+          desc: 'Mira la explicación antes de que la condición cambie.',
+          time: 'ÚLTIMOS MINUTOS',
+          type: 'urgency',
+          avatar: '⏳',
+          showDelay: 6000,
+          duration: 6000
+        },
+        {
+          title: '🎁 Los bonos se muestran dentro del video',
+          desc: 'Si saltas esta parte, puedes perder la condición especial.',
+          time: 'IMPORTANTE',
+          type: 'trust',
+          avatar: '🎁',
+          showDelay: 8000,
+          duration: 6000
+        },
+        {
+          title: '🚨 Atención',
+          desc: 'Toca el video ahora para ver la presentación completa.',
+          time: 'ACCESO EN ESPERA',
+          type: 'urgency',
+          avatar: '🚨',
+          showDelay: 10000,
+          duration: 6000
+        }
+      ];
+
+      // Sequenced notifications for Phase 2 (After play / Unmuted but before CTA)
+      var PHASE2_NOTIFS = [
+        {
+          title: '📌 Mira hasta el final',
+          desc: 'La condición especial se explica dentro de la presentación.',
+          time: 'IMPORTANTE',
+          type: 'trust',
+          avatar: '📌',
+          showDelay: 10000,
+          duration: 8000
+        },
+        {
+          title: '🎁 Atención a los bonos',
+          desc: 'Los bonos aparecen durante la explicación de la oferta.',
+          time: 'NO SALTES ESTA PARTE',
+          type: 'trust',
+          avatar: '🎁',
+          showDelay: 12000,
+          duration: 8000
+        },
+        {
+          title: '⏳ Tu descuento sigue reservado',
+          desc: 'Continúa viendo para entender cómo acceder hoy.',
+          time: 'RESERVADO',
+          type: 'urgency',
+          avatar: '⏳',
+          showDelay: 14000,
+          duration: 8000
+        },
+        {
+          title: '🔒 Acceso en espera',
+          desc: 'Al final del video verás el botón para continuar.',
+          time: 'CASI LISTO',
+          type: 'trust',
+          avatar: '🔒',
+          showDelay: 16000,
+          duration: 8000
+        }
+      ];
 
       // Dynamically create the notification DOM element
       var notifContainer = document.createElement('div');
@@ -1838,6 +1928,42 @@
         }
       }
 
+      /* Generic sequential notification sequence runner */
+      function runSequence(notificationsList, startIndex, onSoundPlay) {
+        if (startIndex >= notificationsList.length) return;
+
+        var notif = notificationsList[startIndex];
+        
+        currentRunnerTimer = setTimeout(function () {
+          showTrustNotification(notif.title, notif.desc, notif.time, {
+            type: notif.type,
+            avatar: notif.avatar,
+            duration: notif.duration,
+            playSound: onSoundPlay
+          });
+
+          // Wait for duration before hiding and scheduling the next one
+          currentRunnerHideTimer = setTimeout(function () {
+            hideCurrentNotification();
+            // Schedule next notification in the list with sequential delay
+            runSequence(notificationsList, startIndex + 1, onSoundPlay);
+          }, notif.duration);
+
+        }, notif.showDelay);
+      }
+
+      function stopRunner() {
+        if (currentRunnerTimer) {
+          clearTimeout(currentRunnerTimer);
+          currentRunnerTimer = null;
+        }
+        if (currentRunnerHideTimer) {
+          clearTimeout(currentRunnerHideTimer);
+          currentRunnerHideTimer = null;
+        }
+        hideCurrentNotification();
+      }
+
       /* ── FASE 1 — ANTES DO PLAY / ANTES DE ATIVAR ÁUDIO ── */
       function startPrePlayNotifications() {
         if (hasUnmuted) return;
@@ -1845,119 +1971,21 @@
         if (!overlay || overlay.classList.contains('dismissed')) return;
 
         stopPrePlayNotifications();
-
-        // 1. After 3s (3000ms)
-        prePlayTimers.push(setTimeout(function () {
-          showTrustNotification(
-            '⚠️ No cierres esta página',
-            'Tu acceso a esta presentación puede perderse si sales ahora.',
-            'DISPONIBLE AHORA',
-            { type: 'urgency', playSound: false, duration: 6000, avatar: '⚠️' }
-          );
-        }, 3000));
-
-        // 2. After 8s (8000ms)
-        prePlayTimers.push(setTimeout(function () {
-          showTrustNotification(
-            '🔊 Activa el sonido para continuar',
-            'El video empieza desde el inicio cuando tocas la pantalla.',
-            'TOCA PARA ESCUCHAR',
-            { type: 'trust', playSound: false, duration: 6000, avatar: '🔊' }
-          );
-        }, 8000));
-
-        // 3. After 14s (14000ms)
-        prePlayTimers.push(setTimeout(function () {
-          showTrustNotification(
-            '⏳ Tu descuento está reservado por tiempo limitado',
-            'Mira la explicación antes de que la condición cambie.',
-            'ÚLTIMOS MINUTOS',
-            { type: 'urgency', playSound: false, duration: 6000, avatar: '⏳' }
-          );
-        }, 14000));
-
-        // 4. After 22s (22000ms)
-        prePlayTimers.push(setTimeout(function () {
-          showTrustNotification(
-            '🎁 Los bonos se muestran dentro del video',
-            'Si saltas esta parte, puedes perder la condición especial.',
-            'IMPORTANTE',
-            { type: 'trust', playSound: false, duration: 6000, avatar: '🎁' }
-          );
-        }, 22000));
-
-        // 5. After 32s (32000ms)
-        prePlayTimers.push(setTimeout(function () {
-          showTrustNotification(
-            '🚨 Atención',
-            'Toca el video ahora para ver la presentación completa.',
-            'ACCESO EN ESPERA',
-            { type: 'urgency', playSound: false, duration: 6000, avatar: '🚨' }
-          );
-        }, 32000));
+        runSequence(PHASE1_NOTIFS, 0, false); // No sound in phase 1 (audio muted)
       }
 
       function stopPrePlayNotifications() {
-        if (prePlayTimers && prePlayTimers.length) {
-          for (var i = 0; i < prePlayTimers.length; i++) {
-            clearTimeout(prePlayTimers[i]);
-          }
-          prePlayTimers = [];
-        }
+        stopRunner();
       }
 
       /* ── FASE 2 — DEPOIS DO PLAY, ANTES DO PITCH ── */
       function startPrePitchNotifications() {
         stopPrePitchNotifications();
-
-        // 1. After 10s (10000ms)
-        prePitchTimers.push(setTimeout(function () {
-          showTrustNotification(
-            '📌 Mira hasta el final',
-            'La condición especial se explica dentro de la presentación.',
-            'IMPORTANTE',
-            { type: 'trust', playSound: true, duration: 8000, avatar: '📌' }
-          );
-        }, 10000));
-
-        // 2. After 22s (22000ms)
-        prePitchTimers.push(setTimeout(function () {
-          showTrustNotification(
-            '🎁 Atención a los bonos',
-            'Los bonos aparecen durante la explicación de la oferta.',
-            'NO SALTES ESTA PARTE',
-            { type: 'trust', playSound: true, duration: 8000, avatar: '🎁' }
-          );
-        }, 22000));
-
-        // 3. After 36s (36000ms)
-        prePitchTimers.push(setTimeout(function () {
-          showTrustNotification(
-            '⏳ Tu descuento sigue reservado',
-            'Continúa viendo para entender cómo acceder hoy.',
-            'RESERVADO',
-            { type: 'urgency', playSound: true, duration: 8000, avatar: '⏳' }
-          );
-        }, 36000));
-
-        // 4. After 52s (52000ms)
-        prePitchTimers.push(setTimeout(function () {
-          showTrustNotification(
-            '🔒 Acceso en espera',
-            'Al final del video verás el botón para continuar.',
-            'CASI LISTO',
-            { type: 'trust', playSound: true, duration: 8000, avatar: '🔒' }
-          );
-        }, 52000));
+        runSequence(PHASE2_NOTIFS, 0, true); // Soft sound in phase 2
       }
 
       function stopPrePitchNotifications() {
-        if (prePitchTimers && prePitchTimers.length) {
-          for (var i = 0; i < prePitchTimers.length; i++) {
-            clearTimeout(prePitchTimers[i]);
-          }
-          prePitchTimers = [];
-        }
+        stopRunner();
       }
 
       /* ── FASE 3 — DEPOIS DO PITCH / CTA REVELADO ── */
@@ -1966,17 +1994,17 @@
 
         var scheduleNext = function () {
           var delay = Math.floor(Math.random() * (18000 - 12000 + 1)) + 12000;
-          postCtaTimers.push(setTimeout(function () {
+          postCtaTimer = setTimeout(function () {
             showPostCtaPurchaseNotification();
             scheduleNext();
-          }, delay));
+          }, delay);
         };
 
         // First purchase notification 4 seconds after CTA
-        postCtaTimers.push(setTimeout(function () {
+        postCtaTimer = setTimeout(function () {
           showPostCtaPurchaseNotification();
           scheduleNext();
-        }, 4000));
+        }, 4000);
       }
 
       function showPostCtaPurchaseNotification() {
@@ -1997,12 +2025,11 @@
       }
 
       function stopPostCtaNotifications() {
-        if (postCtaTimers && postCtaTimers.length) {
-          for (var i = 0; i < postCtaTimers.length; i++) {
-            clearTimeout(postCtaTimers[i]);
-          }
-          postCtaTimers = [];
+        if (postCtaTimer) {
+          clearTimeout(postCtaTimer);
+          postCtaTimer = null;
         }
+        hideCurrentNotification();
       }
 
       function clearNotificationTimers() {
@@ -2013,7 +2040,7 @@
           clearTimeout(notifHideTimer);
           notifHideTimer = null;
         }
-      }
+
 
       /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
          INSTANT CLICK — PRE-WARM HOTMART
